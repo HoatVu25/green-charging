@@ -1,0 +1,136 @@
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (45) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (48) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (49) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (52) boot: End of partition table[0m
+[0;32mI (52) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bc80h ( 48256) map[0m
+[0;32mI (62) esp_image: segment 1: paddr=0001bca8 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001e6c4 vaddr=40374000 size=01954h (  6484) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d8cch (121036) map[0m
+[0;32mI (89) esp_image: segment 4: paddr=0003d8f4 vaddr=40375954 size=0dcf8h ( 56568) load[0m
+[0;32mI (109) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (110) boot: Disabling RNG early entropy source...[0m
+[0;32mI (133) main_task: Started on CPU0[0m
+[0;32mI (173) main_task: Calling app_main()[0m
+[0;32mI (173) uart: queue free spaces: 20[0m
+[0;32mI (173) SIM_FLOW: >> AT
+[0m
+[0;32mI (173) main_task: Returned from app_main()[0m
+[0;32mI (293) SIM_FLOW: << AT
+OK[0m
+[0;32mI (293) SIM_FLOW: >> AT+CPIN?
+[0m
+[0;32mI (733) SIM_FLOW: << AT+CPIN?
++CPIN: READY[0m
+[0;32mI (733) SIM_FLOW: CONNECTING COMPLETED[0m
+[0;32mI (743) SIM_FLOW: >> AT+CSQ
+[0m
+[0;32mI (1243) SIM_FLOW: << AT+CSQ
++CSQ: 21,99
+
+OK[0m
+[0;32mI (1253) SIM_FLOW: >> AT+CREG?
+[0m
+[0;32mI (1663) SIM_FLOW: << AT+CREG?
++CREG: 0,1[0m
+[0;32mI (1663) SIM_FLOW: >> AT+CREG?
+[0m
+[0;31mE (3693) SIM_FLOW: FAIL: AT+CREG?
+[0m
+[0;31mE (3693) SIM_FLOW: NETWORKING FAIL[0m
+[0;32mI (8713) SIM_FLOW: >> AT+CSQ
+[0m
+[0;32mI (9213) SIM_FLOW: << AT+CSQ
++CSQ: 21,99
+
+OK[0m
+[0;32mI (9223) SIM_FLOW: >> AT+CREG?
+[0m
+[0;32mI (9623) SIM_FLOW: << AT+CREG?
++CREG: 0,1[0m
+[0;32mI (9623) SIM_FLOW: >> AT+CREG?
+[0m
+[0;31mE (11653) SIM_FLOW: FAIL: AT+CREG?
+[0m
+[0;31mE (11653) SIM_FLOW: NETWORKING FAIL[0m
+[0;32mI (16673) SIM_FLOW: >> AT+CSQ
+[0m
+[0;32mI (17173) SIM_FLOW: << AT+CSQ
++CSQ: 21,99
+
+OK[0m
+[0;32mI (17183) SIM_FLOW: >> AT+CREG?
+[0m
+[0;32mI (17593) SIM_FLOW: << AT+CREG?
++CREG: 0,1[0m
+[0;32mI (17593) SIM_FLOW: >> AT+CREG?
+[0m
+[0;31mE (19623) SIM_FLOW: FAIL: AT+CREG?
+[0m
+[0;31mE (19623) SIM_FLOW: NETWORKING FAIL[0m
+[0;32mI (24643) SIM_FLOW: >> AT+CSQ
+[0m
+[0;32mI (25143) SIM_FLOW: << AT+CSQ
++CSQ: 19,99
+
+OK[0m
+[0;32mI (25153) SIM_FLOW: >> AT+CREG?
+[0m
+[0;32mI (25553) SIM_FLOW: << AT+CREG?
++CREG: 0,1[0m
+[0;32mI (25553) SIM_FLOW: >> AT+CREG?
+[0m
+[0;31mE (27583) SIM_FLOW: FAIL: AT+CREG?
+[0m
+[0;31mE (27583) SIM_FLOW: NETWORKING FAIL[0m
+[0;32mI (32603) SIM_FLOW: >> AT+CSQ
+[0m
+[0;32mI (33103) SIM_FLOW: << AT+CSQ
++CSQ: 19,99
+
+OK[0m
+[0;32mI (33113) SIM_FLOW: >> AT+CREG?
+[0m
+[0;32mI (33513) SIM_FLOW: << AT+CREG?
++CREG: 0,1[0m
+[0;32mI (33513) SIM_FLOW: >> AT+CREG?
+[0m
+[0;31mE (35543) SIM_FLOW: FAIL: AT+CREG?
+[0m
+[0;31mE (35543) SIM_FLOW: NETWORKING FAIL[0m
+[0;32mI (40563) SIM_FLOW: >> AT+CSQ
+[0m
+[0;32mI (41063) SIM_FLOW: << AT+CSQ
++CSQ: 21,99
+
+OK[0m
+[0;32mI (41073) SIM_FLOW: >> AT+CREG?
+[0m
+[0;32mI (41473) SIM_FLOW: << AT+CREG?
++CREG: 0,1[0m
+[0;32mI (41473) SIM_FLOW: >> AT+CREG?
+[0m
+[0;31mE (43503) SIM_FLOW: FAIL: AT+CREG?
+[0m
+[0;31mE (43503) SIM_FLOW: NETWORKING FAIL[0m
+[0;32mI (48513) SIM_FLOW: >> AT+CSQ
+[0m
+[0;32mI (49013) SIM_FLOW: << AT+CSQ
++CSQ: 21,99
+
+OK[0m
+[0;32mI (49023) SIM_FLOW: >> AT+CREG?
+[0m
+[0;32mI (49433) SIM_FLOW: << AT+CREG?
++CREG: 0,1[0m
+[0;32mI (49433) SIM_FLOW: >> AT+CREG?
+[0m
