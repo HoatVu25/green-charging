@@ -341,61 +341,36 @@ void uart_init(void){
 void uart_task(void *pvParameters) {
     uart_init();
     static char mqtt_payload[512];
-    int listen_timeout = 3000;
-    system_event_t evt;
-    if (sim_ready()) {
-        evt = EVT_SIM_READY;
-        xQueueSend(event_queue, &evt, 0);
-    }
+    system_event_t state = sim_ready() ? EVT_SIM_READY : EVT_SIM_READY; 
+
     while (1) {
-        if (xQueueReceive(event_queue, &evt, portMAX_DELAY)) {
-            switch (evt) {
-                case EVT_SIM_READY:
-                    if (net_connect()) {
-                        evt = EVT_GPRS_CONNECTED;
-                        xQueueSend(event_queue, &evt, 0);
-                    } else {
-                        vTaskDelay(pdMS_TO_TICKS(5000));
-                        evt = EVT_SIM_READY; 
-                        xQueueSend(event_queue, &evt, 0);
-                    }
-                    break;
+        switch (state) {
+            case EVT_SIM_READY:
+                state = net_connect() ? EVT_GPRS_CONNECTED : EVT_SIM_READY;
+                if (state == EVT_SIM_READY) vTaskDelay(pdMS_TO_TICKS(5000));
+                break;
 
-                case EVT_GPRS_CONNECTED:
-                    if (mqtt_connect()) {
-                        if (mqtt_sub_start(MQTT_SUB_TOPIC, 5000)) {
-                            evt = EVT_GET_MESSAGE_MQTT; 
-                            xQueueSend(event_queue, &evt, 0);
-                        }
-                    } else {
-                        evt = EVT_SIM_READY;
-                        xQueueSend(event_queue, &evt, 0);
-                    }
-                    break;
-                case EVT_GET_MESSAGE_MQTT:
-                    if (mqtt_listen(mqtt_payload, listen_timeout)) {
-                        evt = EVT_POST_HTTP;
-                        xQueueSend(event_queue, &evt, 0);
-                    } else {
-                        evt = EVT_GET_MESSAGE_MQTT;
-                        xQueueSend(event_queue, &evt, 0);
-                    }
-                    break;
+            case EVT_GPRS_CONNECTED:
+                state = mqtt_connect() ? EVT_GET_MESSAGE_MQTT : EVT_SIM_READY;
+                break;
 
-                case EVT_POST_HTTP:
-                    if (post_http(HTTP_URL, mqtt_payload)) {
-                        memset(mqtt_payload, 0, sizeof(mqtt_payload));
-                        evt = EVT_GET_MESSAGE_MQTT; 
-                        xQueueSend(event_queue, &evt, 0);
-                    } else {
-                        evt = EVT_GPRS_CONNECTED; 
-                        xQueueSend(event_queue, &evt, 0);
-                    }
-                    break;
-                default:
-                    break;
-            }
+            case EVT_GET_MESSAGE_MQTT:
+                state = mqtt_listen(mqtt_payload, 3000) ? EVT_POST_HTTP : EVT_GET_MESSAGE_MQTT;
+                break;
+
+            case EVT_POST_HTTP:
+                if (post_http(HTTP_URL, mqtt_payload)) {
+                    memset(mqtt_payload, 0, sizeof(mqtt_payload));
+                    state = EVT_GET_MESSAGE_MQTT; 
+                } else {
+                    state = EVT_GPRS_CONNECTED;   
+                }
+                break;
+
+            default:
+                state = EVT_SIM_READY;
+                break;
         }
-        vTaskDelay(pdMS_TO_TICKS(10));
+        vTaskDelay(pdMS_TO_TICKS(20)); 
     }
 }

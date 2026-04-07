@@ -1,0 +1,136 @@
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32s3
+-- Project sdkconfig file C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- App "green_charge_firmware" version: 0e4f547-dirty
+-- Adding linker script C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.3.1/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx data_control driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_vfs_console esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls monitor mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs state_machine tcp_transport touch_element uart_sim ulp unity usb vfs wear_levelling wifi_prov wifi_provisioning wpa_supplicant xtensa
+-- Component paths: C:/Espressif/frameworks/esp-idf-v5.3.1/components/app_trace C:/Espressif/frameworks/esp-idf-v5.3.1/components/app_update C:/Espressif/frameworks/esp-idf-v5.3.1/components/bootloader C:/Espressif/frameworks/esp-idf-v5.3.1/components/bootloader_support C:/Espressif/frameworks/esp-idf-v5.3.1/components/bt C:/Espressif/frameworks/esp-idf-v5.3.1/components/cmock C:/Espressif/frameworks/esp-idf-v5.3.1/components/console C:/Espressif/frameworks/esp-idf-v5.3.1/components/cxx C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/data_control C:/Espressif/frameworks/esp-idf-v5.3.1/components/driver C:/Espressif/frameworks/esp-idf-v5.3.1/components/efuse C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp-tls C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_adc C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_app_format C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_bootloader_format C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_coex C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_common C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_ana_cmpr C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_cam C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_dac C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_gpio C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_gptimer C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_i2c C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_i2s C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_isp C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_jpeg C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_ledc C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_mcpwm C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_parlio C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_pcnt C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_ppa C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_rmt C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdio C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdm C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdmmc C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_sdspi C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_spi C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_touch_sens C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_tsens C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_uart C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_driver_usb_serial_jtag C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_eth C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_event C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_gdbstub C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hid C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_http_client C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_http_server C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_https_ota C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_https_server C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_hw_support C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_lcd C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_local_ctrl C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_mm C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_netif C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_netif_stack C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_partition C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_phy C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_pm C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_psram C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_ringbuf C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_system C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_timer C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_vfs_console C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_wifi C:/Espressif/frameworks/esp-idf-v5.3.1/components/espcoredump C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py C:/Espressif/frameworks/esp-idf-v5.3.1/components/fatfs C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos C:/Espressif/frameworks/esp-idf-v5.3.1/components/hal C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap C:/Espressif/frameworks/esp-idf-v5.3.1/components/http_parser C:/Espressif/frameworks/esp-idf-v5.3.1/components/idf_test C:/Espressif/frameworks/esp-idf-v5.3.1/components/ieee802154 C:/Espressif/frameworks/esp-idf-v5.3.1/components/json C:/Espressif/frameworks/esp-idf-v5.3.1/components/log C:/Espressif/frameworks/esp-idf-v5.3.1/components/lwip C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/main C:/Espressif/frameworks/esp-idf-v5.3.1/components/mbedtls C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/monitor C:/Espressif/frameworks/esp-idf-v5.3.1/components/mqtt C:/Espressif/frameworks/esp-idf-v5.3.1/components/newlib C:/Espressif/frameworks/esp-idf-v5.3.1/components/nvs_flash C:/Espressif/frameworks/esp-idf-v5.3.1/components/nvs_sec_provider C:/Espressif/frameworks/esp-idf-v5.3.1/components/openthread C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table C:/Espressif/frameworks/esp-idf-v5.3.1/components/perfmon C:/Espressif/frameworks/esp-idf-v5.3.1/components/protobuf-c C:/Espressif/frameworks/esp-idf-v5.3.1/components/protocomm C:/Espressif/frameworks/esp-idf-v5.3.1/components/pthread C:/Espressif/frameworks/esp-idf-v5.3.1/components/sdmmc C:/Espressif/frameworks/esp-idf-v5.3.1/components/soc C:/Espressif/frameworks/esp-idf-v5.3.1/components/spi_flash C:/Espressif/frameworks/esp-idf-v5.3.1/components/spiffs C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/state_machine C:/Espressif/frameworks/esp-idf-v5.3.1/components/tcp_transport C:/Espressif/frameworks/esp-idf-v5.3.1/components/touch_element C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/uart_sim C:/Espressif/frameworks/esp-idf-v5.3.1/components/ulp C:/Espressif/frameworks/esp-idf-v5.3.1/components/unity C:/Espressif/frameworks/esp-idf-v5.3.1/components/usb C:/Espressif/frameworks/esp-idf-v5.3.1/components/vfs C:/Espressif/frameworks/esp-idf-v5.3.1/components/wear_levelling C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/wifi_prov C:/Espressif/frameworks/esp-idf-v5.3.1/components/wifi_provisioning C:/Espressif/frameworks/esp-idf-v5.3.1/components/wpa_supplicant C:/Espressif/frameworks/esp-idf-v5.3.1/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build
+[0/1] Re-running CMake...
+[1/12] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\vuhuu\OneDrive\Desktop\green_charging\green-charging\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader/bootloader.bin"
+Bootloader binary size 0x52d0 bytes. 0x2d30 bytes (35%) free.
+[2/10] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[3/10] Linking C static library esp-idf\esp_app_format\libesp_app_format.a
+[4/10] Building C object esp-idf/uart_sim/CMakeFiles/__idf_uart_sim.dir/uart_sim.c.obj
+[5/10] Linking C static library esp-idf\uart_sim\libuart_sim.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable green_charge_firmware.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/green_charge_firmware.bin
+[9/10] cmd.exe /C "cd /D C:\Users\vuhuu\OneDrive\Desktop\green_charging\green-charging\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/partition_table/partition-table.bin C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/green_charge_firmware.bin"
+green_charge_firmware.bin binary size 0x3b440 bytes. Smallest app partition is 0x100000 bytes. 0xc4bc0 bytes (77%) free.
+[9/10] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.3.1\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.3.1 -D SERIAL_TOOL=C:/Espressif/python_enesptool.py --chip esp32s3 -p COM14 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 green_charge_firmware.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM14
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: 50:78:7d:07:3e:90
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x0004bfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21200 bytes to 13130...
+Writing at 0x00000000... (14 %)
+Writing at 0x00001554... (28 %)
+Writing at 0x000021e7... (42 %)
+Writing at 0x00002d9f... (57 %)
+Writing at 0x00003865... (71 %)
+Writing at 0x0000428f... (85 %)
+Writing at 0x00004d75... (100 %)
+Wrote 21200 bytes (13130 compressed) at 0x00000000 in 0.2 seconds (effective 739.7 kbit/s)...
+Hash of data verified.
+Compressed 242752 bytes to 122044...
+Writing at 0x00010000... (1 %)
+Writing at 0x0001113f... (3 %)
+Writing at 0x00012c26... (5 %)
+Writing at 0x00014928... (6 %)
+Writing at 0x0001609f... (8 %)
+Writing at 0x00017e90... (10 %)
+Writing at 0x000192d3... (11 %)
+Writing at 0x0001adae... (13 %)
+Writing at 0x0001d456... (15 %)
+Writing at 0x0001ebd5... (16 %)
+Writing at 0x0001f7e2... (18 %)
+Writing at 0x000202d5... (20 %)
+Writing at 0x00020e93... (21 %)
+Writing at 0x00021aa2... (23 %)
+Writing at 0x000226a8... (25 %)
+Writing at 0x00023213... (26 %)
+Writing at 0x00023ca5... (28 %)
+Writing at 0x0002492e... (30 %)
+Writing at 0x0002590b... (31 %)
+Writing at 0x000265d1... (33 %)
+Writing at 0x0002719a... (35 %)
+Writing at 0x00027e24... (36 %)
+Writing at 0x00028dbd... (38 %)
+Writing at 0x00029d11... (40 %)
+Writing at 0x0002a8ad... (41 %)
+Writing at 0x0002b483... (43 %)
+Writing at 0x0002c120... (45 %)
+Writing at 0x0002ce1a... (46 %)
+Writing at 0x0002da03... (48 %)
+Writing at 0x0002e4f8... (50 %)
+Writing at 0x0002f109... (51 %)
+Writing at 0x0002fce7... (53 %)
+Writing at 0x0003113f... (55 %)
+Writing at 0x00031ea9... (56 %)
+Writing at 0x00034c81... (58 %)
+Writing at 0x000362f1... (60 %)
+Writing at 0x000379a3... (61 %)
+Writing at 0x000383ce... (63 %)
+Writing at 0x00038dbf... (65 %)
+Writing at 0x0003a744... (66 %)
+Writing at 0x0003c033... (68 %)
+Writing at 0x0003cd4a... (70 %)
+Writing at 0x0003d707... (71 %)
+Writing at 0x0003e275... (73 %)
+Writing at 0x0003ee34... (75 %)
+Writing at 0x0003f9ac... (76 %)
+Writing at 0x000405ce... (78 %)
+Writing at 0x000413c2... (80 %)
+Writing at 0x00041f4c... (81 %)
+Writing at 0x00042aee... (83 %)
+Writing at 0x00043674... (85 %)
+Writing at 0x000441e2... (86 %)
+Writing at 0x00044eb0... (88 %)
+Writing at 0x00045d19... (90 %)
+Writing at 0x000469b7... (91 %)
+Writing at 0x000479f0... (93 %)
+Writing at 0x00048524... (95 %)
+Writing at 0x0004900f... (96 %)
+Writing at 0x00049c19... (98 %)
+Writing at 0x0004ad92... (100 %)
+Wrote 242752 bytes (122044 compressed) at 0x00010000 in 1.7 seconds (effective 1136.4 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 776.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+v/idf5.3_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build -P C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/run_serial_tool.cmake"
