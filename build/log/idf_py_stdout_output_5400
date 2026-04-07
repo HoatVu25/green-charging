@@ -1,0 +1,247 @@
+OK[0m[0;32mI (383) UART_SIM: << OK[0m[0;32mI (383) [0;32mI (483) UART_SIM: 
++CPIN: READY
+
+OK
+[0m
+[0;32mI (513) UART_SIM: << 
++CPIN: READY
+
+OK
+[0m
+[0;32mI (533) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (48) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (49) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (52) boot: End of partition table[0m
+[0;32mI (52) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd30h ( 48432) map[0m
+[0;32mI (62) esp_image: segment 1: paddr=0001bd58 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001e774 vaddr=40374000 size=018a4h (  6308) load[0m
+[0;32mI (67) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d798h (120728) map[0m
+[0;32mI (89) esp_image: segment 4: paddr=0003d7c0 vaddr=403758a4 size=0dca0h ( 56480) load[0m
+[0;32mI (109) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (110) boot: Disabling RNG early entropy source...[0m
+[0;32mI (132) main_task: Started on CPU0[0m
+[0;32mI (172) main_task: Calling app_main()[0m
+[0;32mI (172) UART_SIM: >> AT
+[0m
+[0;32mI (172) main_task: Returned from app_main()[0m
+[0;32mI (272) UART_SIM: 
+OK
+[0m
+[0;32mI (282) UART_SIM: << 
+OK
+[0m
+[0;32mI (292) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (402) UART_SIM: 
++CPIN: READY
+
+OK
+[0m
+[0;32mI (432) UART_SIM: << 
++CPIN: READY
+
+OK
+[0m
+[0;32mI (462) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (562) UART_SIM: 
+OK
+[0m
+[0;32mI (572) UART_SIM: << 
+OK
+[0m
+[0;32mI (592) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (692) UART_SIM: 
+OK
+[0m
+[0;32mI (702) UART_SIM: << 
+OK
+[0m
+[0;32mI (722) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;32mI (822) UART_SIM: 
++NETCLOSE: 2
+
+ERROR
+[0m
+[0;31mE (3752) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (4752) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (5012) UART_SIM: 
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5042) UART_SIM: << 
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5082) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (5182) UART_SIM: 
+OK
+[0m
+[0;32mI (5192) UART_SIM: << 
+OK
+[0m
+[0;32mI (5212) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (5312) UART_SIM: 
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (5342) UART_SIM: << 
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (7382) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (7482) UART_SIM: 
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (7512) UART_SIM: << 
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (8052) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (8152) UART_SIM: 
+OK
+[0m
+[0;32mI (8162) UART_SIM: << 
+OK
+[0m
+[0;32mI (8672) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (8852) UART_SIM: 
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (8882) UART_SIM: << 
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (8922) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (8922) UART_SIM: >> AT+CMQTTSUB=0,11,1
+[0m
+[0;32mI (9022) UART_SIM: 
+>[0m
+[0;32mI (9022) UART_SIM: << 
+>[0m
+[0;32mI (9372) UART_SIM: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (9402) UART_SIM: << 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (9442) UART_SIM: SUBSCRIBE OK: GC176560666[0m
+[0;33mW (24442) UART_SIM: No incoming payload received after subscribe[0m
+[0;32mI (29452) UART_SIM: >> AT+CMQTTSUB=0,11,1
+[0m
+[0;32mI (29552) UART_SIM: 
+>[0m
+[0;32mI (29552) UART_SIM: << 
+>[0m
+[0;32mI (29852) UART_SIM: 
+OK
+[0m
+[0;32mI (30062) UART_SIM: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (30092) UART_SIM: << 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (30132) UART_SIM: SUBSCRIBE OK: GC176560666[0m
+[0;33mW (45132) UART_SIM: No incoming payload received after subscribe[0m
+[0;32mI (50142) UART_SIM: >> AT+CMQTTSUB=0,11,1
+[0m
+[0;32mI (50242) UART_SIM: 
+>[0m
+[0;32mI (50242) UART_SIM: << 
+>[0m
+[0;32mI (50542) UART_SIM: 
+OK
+[0m
+[0;32mI (50682) UART_SIM: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (50712) UART_SIM: << 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (50752) UART_SIM: SUBSCRIBE OK: GC176560666[0m
+[0;33mW (65752) UART_SIM: No incoming payload received after subscribe[0m
+[0;32mI (70762) UART_SIM: >> AT+CMQTTSUB=0,11,1
+[0m
+[0;32mI (70862) UART_SIM: 
+>[0m
+[0;32mI (70862) UART_SIM: << 
+>[0m
+[0;32mI (71162) UART_SIM: 
+OK
+[0m
+[0;32mI (71302) UART_SIM: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (71332) UART_SIM: << 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (71372) UART_SIM: SUBSCRIBE OK: GC176560666[0m
+[0;33mW (86372) UART_SIM: No incoming payload received after subscribe[0m
+[0;32mI (91382) UART_SIM: >> AT+CMQTTSUB=0,11,1
+[0m
+[0;32mI (91482) UART_SIM: 
+>[0m
+[0;32mI (91482) UART_SIM: << 
+>[0m
+[0;32mI (91782) UART_SIM: 
+OK
+[0m
+[0;32mI (91962) UART_SIM: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (91992) UART_SIM: << 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (92032) UART_SIM: SUBSCRIBE OK: GC176560666[0m

@@ -1,0 +1,711 @@
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (48) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (49) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (52) boot: End of partition table[0m
+[0;32mI (52) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd30h ( 48432) map[0m
+[0;32mI (61) esp_image: segment 1: paddr=0001bd58 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (63) esp_image: segment 2: paddr=0001e774 vaddr=40374000 size=018a4h (  6308) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d6c8h (120520) map[0m
+[0;32mI (89) esp_image: segment 4: paddr=0003d6f0 vaddr=403758a4 size=0dca0h ( 56480) load[0m
+[0;32mI (108) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (109) boot: Disabling RNG early entropy source...[0m
+[0;32mI (131) main_task: Started on CPU0[0m
+[0;32mI (171) main_task: Calling app_main()[0m
+[0;32mI (171) main_task: Returned from app_main()[0m
+[0;32mI (1171) UART_SIM: >> AT
+[0m
+[0;32mI (1271) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1281) UART_SIM: >> ATZ
+[0m
+[0;32mI (1381) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1391) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1491) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1511) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1611) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1621) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1721) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1721) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;31mE (4731) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (5731) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (5971) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5991) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (6101) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (6101) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (6201) UART_SIM: << AT+CMQTTSTOP
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (8221) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (8451) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (8971) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (9071) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (9581) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (9771) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (9801) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (9801) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m
+[0;32mI (9901) UART_SIM: << AT+CMQTTSUB=0,12,1
+>[0m
+[0;32mI (10101) UART_SIM: Starting listen loop...[0m
+[0;32mI (11141) UART_SIM: RX[24]: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4002e79e  PS      : 0x00060c30  A0      : 0x8002e8ce  A1      : 0x3fc9e3a0  
+A2      : 0x00000013  A3      : 0x00000013  A4      : 0x00000000  A5      : 0x0000000a  
+A6      : 0x00000013  A7      : 0x00000008  A8      : 0x80050c35  A9      : 0x3fc9e390  
+A10     : 0x3fc9e750  A11     : 0x3ff191fd  A12     : 0x00000000  A13     : 0x3c02550a  
+A14     : 0x00000005  A15     : 0x00000004  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000013  LBEG    : 0x40056f08  LEND    : 0x40056f12  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4002e79b:0x3fc9e3a0 0x4002e8cb:0x3fc9e3d0 0x4002e72d:0x3fc9e3f0 0x420082fd:0x3fc9e410 0x42008605:0x3fc9e440 0x4037b619:0x3fc9e580
+
+
+
+
+ELF file SHA256: c1f585c31
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (47) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (51) boot: End of partition table[0m
+[0;32mI (51) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd30h ( 48432) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001bd58 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (62) esp_image: segment 2: paddr=0001e774 vaddr=40374000 size=018a4h (  6308) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d6c8h (120520) map[0m
+[0;32mI (87) esp_image: segment 4: paddr=0003d6f0 vaddr=403758a4 size=0dca0h ( 56480) load[0m
+[0;32mI (107) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (108) boot: Disabling RNG early entropy source...[0m
+[0;32mI (130) main_task: Started on CPU0[0m
+[0;32mI (170) main_task: Calling app_main()[0m
+[0;32mI (170) main_task: Returned from app_main()[0m
+[0;32mI (1170) UART_SIM: >> AT
+[0m
+[0;32mI (1270) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1280) UART_SIM: >> ATZ
+[0m
+[0;32mI (1390) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1400) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1510) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1530) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1640) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1650) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1750) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1760) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;31mE (4770) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (5770) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (5970) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5990) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (6100) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (6110) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (6220) UART_SIM: << AT+CMQTTSTOP
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (8240) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (8460) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (8980) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (9080) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (9590) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (9760) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (9790) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (9790) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m
+[0;32mI (9890) UART_SIM: << AT+CMQTTSUB=0,12,1
+>[0m
+[0;32mI (10090) UART_SIM: Starting listen loop...[0m
+[0;32mI (11120) UART_SIM: RX[24]: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4002e79e  PS      : 0x00060c30  A0      : 0x8002e8ce  A1      : 0x3fc9e3a0  
+A2      : 0x00000013  A3      : 0x00000013  A4      : 0x00000000  A5      : 0x0000000a  
+A6      : 0x00000013  A7      : 0x00000008  A8      : 0x80050c35  A9      : 0x3fc9e390  
+A10     : 0x3fc9e750  A11     : 0x3ff191fd  A12     : 0x00000000  A13     : 0x3c02550a  
+A14     : 0x00000005  A15     : 0x00000004  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000013  LBEG    : 0x40056f08  LEND    : 0x40056f12  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4002e79b:0x3fc9e3a0 0x4002e8cb:0x3fc9e3d0 0x4002e72d:0x3fc9e3f0 0x420082fd:0x3fc9e410 0x42008605:0x3fc9e440 0x4037b619:0x3fc9e580
+
+
+
+
+ELF file SHA256: c1f585c31
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (48) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd30h ( 48432) map[0m
+[0;32mI (59) esp_image: segment 1: paddr=0001bd58 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (62) esp_image: segment 2: paddr=0001e774 vaddr=40374000 size=018a4h (  6308) load[0m
+[0;32mI (64) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d6c8h (120520) map[0m
+[0;32mI (87) esp_image: segment 4: paddr=0003d6f0 vaddr=403758a4 size=0dca0h ( 56480) load[0m
+[0;32mI (106) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (107) boot: Disabling RNG early entropy source...[0m
+[0;32mI (129) main_task: Started on CPU0[0m
+[0;32mI (169) main_task: Calling app_main()[0m
+[0;32mI (169) main_task: Returned from app_main()[0m
+[0;32mI (1169) UART_SIM: >> AT
+[0m
+[0;32mI (1269) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1279) UART_SIM: >> ATZ
+[0m
+[0;32mI (1379) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1389) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1489) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1509) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1609) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1619) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1719) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1729) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;31mE (4739) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (5739) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (5869) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5889) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (5999) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (6009) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (6109) UART_SIM: << AT+CMQTTSTOP
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (8129) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (8349) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (8869) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (8969) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (9479) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (9659) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (9689) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (9689) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m
+[0;32mI (9789) UART_SIM: << AT+CMQTTSUB=0,12,1
+>[0m
+[0;32mI (9989) UART_SIM: Starting listen loop...[0m
+[0;32mI (11019) UART_SIM: RX[24]: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4002e79e  PS      : 0x00060c30  A0      : 0x8002e8ce  A1      : 0x3fc9e3a0  
+A2      : 0x00000013  A3      : 0x00000013  A4      : 0x00000000  A5      : 0x0000000a  
+A6      : 0x00000013  A7      : 0x00000008  A8      : 0x80050c35  A9      : 0x3fc9e390  
+A10     : 0x3fc9e750  A11     : 0x3ff191fd  A12     : 0x00000000  A13     : 0x3c02550a  
+A14     : 0x00000005  A15     : 0x00000004  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000013  LBEG    : 0x40056f08  LEND    : 0x40056f12  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4002e79b:0x3fc9e3a0 0x4002e8cb:0x3fc9e3d0 0x4002e72d:0x3fc9e3f0 0x420082fd:0x3fc9e410 0x42008605:0x3fc9e440 0x4037b619:0x3fc9e580
+
+
+
+
+ELF file SHA256: c1f585c31
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (48) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd30h ( 48432) map[0m
+[0;32mI (59) esp_image: segment 1: paddr=0001bd58 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (61) esp_image: segment 2: paddr=0001e774 vaddr=40374000 size=018a4h (  6308) load[0m
+[0;32mI (64) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d6c8h (120520) map[0m
+[0;32mI (86) esp_image: segment 4: paddr=0003d6f0 vaddr=403758a4 size=0dca0h ( 56480) load[0m
+[0;32mI (105) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (106) boot: Disabling RNG early entropy source...[0m
+[0;32mI (128) main_task: Started on CPU0[0m
+[0;32mI (168) main_task: Calling app_main()[0m
+[0;32mI (168) main_task: Returned from app_main()[0m
+[0;32mI (1168) UART_SIM: >> AT
+[0m
+[0;32mI (1268) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1278) UART_SIM: >> ATZ
+[0m
+[0;32mI (1378) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1388) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1498) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1518) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1618) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1628) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1738) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1748) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;31mE (4748) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (5748) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (5888) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5908) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (6008) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (6018) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (6118) UART_SIM: << AT+CMQTTSTOP
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (8138) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (8368) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (8888) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (8988) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (9498) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (9668) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (9688) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (9698) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m
+[0;32mI (9798) UART_SIM: << AT+CMQTTSUB=0,12,1
+>[0m
+[0;32mI (9998) UART_SIM: Starting listen loop...[0m
+[0;32mI (11038) UART_SIM: RX[24]: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4002e79e  PS      : 0x00060c30  A0      : 0x8002e8ce  A1      : 0x3fc9e3a0  
+A2      : 0x00000013  A3      : 0x00000013  A4      : 0x00000000  A5      : 0x0000000a  
+A6      : 0x00000013  A7      : 0x00000008  A8      : 0x80050c35  A9      : 0x3fc9e390  
+A10     : 0x3fc9e750  A11     : 0x3ff191fd  A12     : 0x00000000  A13     : 0x3c02550a  
+A14     : 0x00000005  A15     : 0x00000004  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000013  LBEG    : 0x40056f08  LEND    : 0x40056f12  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4002e79b:0x3fc9e3a0 0x4002e8cb:0x3fc9e3d0 0x4002e72d:0x3fc9e3f0 0x420082fd:0x3fc9e410 0x42008605:0x3fc9e440 0x4037b619:0x3fc9e580
+
+
+
+
+ELF file SHA256: c1f585c31
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (43) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (45) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (45) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (46) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (47) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (51) boot: End of partition table[0m
+[0;32mI (51) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd30h ( 48432) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001bd58 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (62) esp_image: segment 2: paddr=0001e774 vaddr=40374000 size=018a4h (  6308) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d6c8h (120520) map[0m
+[0;32mI (87) esp_image: segment 4: paddr=0003d6f0 vaddr=403758a4 size=0dca0h ( 56480) load[0m
+[0;32mI (106) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (107) boot: Disabling RNG early entropy source...[0m
+[0;32mI (129) main_task: Started on CPU0[0m
+[0;32mI (169) main_task: Calling app_main()[0m
+[0;32mI (169) main_task: Returned from app_main()[0m
+[0;32mI (1169) UART_SIM: >> AT
+[0m
+[0;32mI (1269) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1279) UART_SIM: >> ATZ
+[0m
+[0;32mI (1379) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1389) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1499) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1519) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1619) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1629) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1729) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1729) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;31mE (4729) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (5729) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (5859) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5879) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (5979) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (5989) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (6089) UART_SIM: << AT+CMQTTSTOP
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (8109) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (8339) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (8859) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (8959) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (9469) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (9639) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (9659) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (9659) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m
+[0;32mI (9759) UART_SIM: << AT+CMQTTSUB=0,12,1
+>[0m
+[0;32mI (9959) UART_SIM: Starting listen loop...[0m
+[0;32mI (10989) UART_SIM: RX[24]: 
+OK
+
++CMQTTSUB: 0,0
+[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4002e79e  PS      : 0x00060c30  A0      : 0x8002e8ce  A1      : 0x3fc9e3a0  
+A2      : 0x00000013  A3      : 0x00000013  A4      : 0x00000000  A5      : 0x0000000a  
+A6      : 0x00000013  A7      : 0x00000008  A8      : 0x80050c35  A9      : 0x3fc9e390  
+A10     : 0x3fc9e750  A11     : 0x3ff191fd  A12     : 0x00000000  A13     : 0x3c02550a  
+A14     : 0x00000005  A15     : 0x00000004  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000013  LBEG    : 0x40056f08  LEND    : 0x40056f12  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4002e79b:0x3fc9e3a0 0x4002e8cb:0x3fc9e3d0 0x4002e72d:0x3fc9e3f0 0x420082fd:0x3fc9e410 0x42008605:0x3fc9e440 0x4037b619:0x3fc9e580
+
+
+
+
+ELF file SHA256: c1f585c31
+
+
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (48) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd30h ( 48432) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001bd58 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (63) esp_image: segment 2: paddr=0001e774 vaddr=40374000 size=018a4h (  6308) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d6c8h (120520) map[0m
+[0;32mI (88) esp_image: segment 4: paddr=0003d6f0 vaddr=403758a4 size=0dca0h ( 56480) load[0m
+[0;32mI (107) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (108) boot: Disabling RNG early entropy source...[0m
+[0;32mI (130) main_task: Started on CPU0[0m
+[0;32mI (170) main_task: Calling app_main()[0m
+[0;32mI (170) main_task: Returned from app_main()[0m
+[0;32mI (1170) UART_SIM: >> AT
+[0m
+[0;32mI (1270) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1280) UART_SIM: >> ATZ
+[0m
+[0;32mI (1380) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1390) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1490) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1510) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1620) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1630) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1740) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1750) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;31mE (4750) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (5750) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (5890) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (5910) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (6010) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (6020) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (6130) UART_SIM: << AT+CMQTTSTOP
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (8150) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (8380) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (8900) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (9000) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (9510) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (9690) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (9720) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (9720) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m

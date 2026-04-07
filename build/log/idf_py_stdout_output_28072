@@ -1,0 +1,54 @@
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (45) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (47) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (48) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (49) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (52) boot: End of partition table[0m
+[0;32mI (52) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c568h ( 50536) map[0m
+[0;32mI (61) esp_image: segment 1: paddr=0001c590 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (65) esp_image: segment 2: paddr=0001efac vaddr=40374000 size=0106ch (  4204) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c8ch (146572) map[0m
+[0;32mI (93) esp_image: segment 4: paddr=00043cb4 vaddr=4037506c size=0e4ech ( 58604) load[0m
+[0;32mI (114) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (115) boot: Disabling RNG early entropy source...[0m
+[0;32mI (138) main_task: Started on CPU0[0m
+[0;32mI (178) main_task: Calling app_main()[0m
+[0;32mI (178) main_task: Returned from app_main()[0m
+[0;32mI (1178) UART_SIM: >> AT
+[0m
+[0;31mE (3178) UART_SIM: FAIL: AT
+[0m
+[0;32mI (4178) UART_SIM: >> AT
+[0m
+[0;31mE (6178) UART_SIM: FAIL: AT
+[0m
+[0;32mI (7178) UART_SIM: >> AT
+[0m
+[0;31mE (9178) UART_SIM: FAIL: AT
+[0m
+[0;32mI (10178) UART_SIM: >> AT
+[0m
+[0;31mE (12178) UART_SIM: FAIL: AT
+[0m
+[0;32mI (13178) UART_SIM: >> AT
+[0m
+[0;31mE (15178) UART_SIM: FAIL: AT
+[0m
+[0;32mI (16178) UART_SIM: >> ATZ
+[0m
+[0;31mE (19178) UART_SIM: FAIL: ATZ
+[0m
+[0;32mI (19188) UART_SIM: >> AT+CPIN?
+[0m
+[0;31mE (22188) UART_SIM: FAIL: AT+CPIN?
+[0m
+[0;32mI (22188) UART_SIM: >> AT+CGATT=1
+[0m

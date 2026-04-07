@@ -1,0 +1,303 @@
+OK[0m[0;32mI (389) UART_SIM: >> AT+CPIN?[0m[0;32mI (4[0;32mI (589) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (619) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (48) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (49) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (52) boot: End of partition table[0m
+[0;32mI (52) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c628h ( 50728) map[0m
+[0;32mI (62) esp_image: segment 1: paddr=0001c650 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (65) esp_image: segment 2: paddr=0001f06c vaddr=40374000 size=00fach (  4012) load[0m
+[0;32mI (67) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23e34h (146996) map[0m
+[0;32mI (94) esp_image: segment 4: paddr=00043e5c vaddr=40374fac size=0e5ach ( 58796) load[0m
+[0;32mI (113) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (114) boot: Disabling RNG early entropy source...[0m
+[0;32mI (138) main_task: Started on CPU0[0m
+[0;32mI (178) main_task: Calling app_main()[0m
+[0;32mI (178) UART_SIM: >> AT
+[0m
+[0;32mI (178) main_task: Returned from app_main()[0m
+[0;32mI (278) UART_SIM: << AT
+OK
+[0m
+[0;32mI (288) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (388) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (408) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (508) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (518) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (618) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (628) UART_SIM: >> AT+NETCLOSE
+[0m
+[0;31mE (3628) UART_SIM: FAIL: AT+NETCLOSE
+[0m
+[0;32mI (4628) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (4768) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (4788) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (4888) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (4898) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (4998) UART_SIM: << AT+CMQTTSTOP
+OK
+
++CMQTTSTOP: 0
+[0m
+[0;32mI (7018) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (7248) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (7768) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (7868) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (8378) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (8548) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (8578) UART_SIM: MQTT CONNECT OK![0m
+[0;32mI (8578) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m
+[0;32mI (8678) UART_SIM: << AT+CMQTTSUB=0,12,1
+>[0m
+[0;32mI (9008) UART_SIM: << 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (9028) UART_SIM: SUBSCRIBE OK: GC1765606666[0m
+[0;32mI (32218) UART_SIM: RAW[109]: 
++CMQTTRXSTART: 0,12,9
++CMQTTRXTOPIC: 0,12
+GC1765606666
++CMQTTRXPAYLOAD: 0,9
+Hoat_test
++CMQTTRXEND: 0
+[0m
+[0;32mI (32248) UART_SIM: Received payload: Hoat_test[0m
+[0;32mI (32248) UART_SIM: Message: Hoat_test[0m
+[0;32mI (32248) UART_SIM: HTTP POST: {"postCode":"GC59286691881","state":2,"paymentDriverCode":"GC8PHV3MEQ","maxAmount":14877,"sessionCode":1775403288501,"pricePost":5000}[0m
+[0;32mI (32258) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (32358) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (32368) UART_SIM: >> AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+[0m
+[0;32mI (32478) UART_SIM: << AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+OK
+[0m
+[0;32mI (32488) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (32598) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (32618) UART_SIM: >> AT+HTTPDATA=134,10000
+[0m
+[0;32mI (32718) UART_SIM: << AT+HTTPDATA=134,10000
+DOWNLOAD
+[0m
+[0;32mI (33038) UART_SIM: << 
+OK
+[0m
+[0;32mI (33048) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (36538) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,400,113
+[0m
+[0;32mI (36558) UART_SIM: HTTP Status: 400, Data len: 113[0m
+[0;31mE (36558) UART_SIM: HTTP error status: 400[0m
+[0;32mI (36558) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (36658) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (36668) UART_SIM: HTTP fail[0m
+[0;32mI (206488) UART_SIM: RAW[104]: 
++CMQTTRXSTART: 0,12,4
++CMQTTRXTOPIC: 0,12
+GC1765606666
++CMQTTRXPAYLOAD: 0,4
+{
+  
++CMQTTRXEND: 0
+[0m
+[0;32mI (206528) UART_SIM: Received payload: {
+  [0m
+[0;32mI (206528) UART_SIM: Message: {
+  [0m
+[0;32mI (206528) UART_SIM: HTTP POST: {"postCode":"GC59286691881","state":2,"paymentDriverCode":"GC8PHV3MEQ","maxAmount":14877,"sessionCode":1775403288501,"pricePost":5000}[0m
+[0;32mI (206538) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (206648) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (206658) UART_SIM: >> AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+[0m
+[0;32mI (206768) UART_SIM: << AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+OK
+[0m
+[0;32mI (206778) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (206888) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (206908) UART_SIM: >> AT+HTTPDATA=134,10000
+[0m
+[0;32mI (207008) UART_SIM: << AT+HTTPDATA=134,10000
+DOWNLOAD
+[0m
+[0;32mI (207328) UART_SIM: << 
+OK
+[0m
+[0;32mI (207338) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (210708) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,400,113
+[0m
+[0;32mI (210718) UART_SIM: HTTP Status: 400, Data len: 113[0m
+[0;31mE (210728) UART_SIM: HTTP error status: 400[0m
+[0;32mI (210728) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (210828) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (210838) UART_SIM: HTTP fail[0m
+[0;32mI (250378) UART_SIM: RAW[109]: 
++CMQTTRXSTART: 0,12,9
++CMQTTRXTOPIC: 0,12
+GC1765606666
++CMQTTRXPAYLOAD: 0,9
+Hoat_test
++CMQTTRXEND: 0
+[0m
+[0;32mI (250408) UART_SIM: Received payload: Hoat_test[0m
+[0;32mI (250408) UART_SIM: Message: Hoat_test[0m
+[0;32mI (250408) UART_SIM: HTTP POST: {"postCode":"GC59286691881","state":2,"paymentDriverCode":"GC8PHV3MEQ","maxAmount":14877,"sessionCode":1775403288501,"pricePost":5000}[0m
+[0;32mI (250418) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (250518) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (250528) UART_SIM: >> AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+[0m
+[0;32mI (250638) UART_SIM: << AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+OK
+[0m
+[0;32mI (250658) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (250768) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (250788) UART_SIM: >> AT+HTTPDATA=134,10000
+[0m
+[0;32mI (250888) UART_SIM: << AT+HTTPDATA=134,10000
+DOWNLOAD
+[0m
+[0;32mI (251208) UART_SIM: << 
+OK
+[0m
+[0;32mI (251218) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (254628) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,400,113
+[0m
+[0;32mI (254648) UART_SIM: HTTP Status: 400, Data len: 113[0m
+[0;31mE (254658) UART_SIM: HTTP error status: 400[0m
+[0;32mI (254658) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (254758) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (254768) UART_SIM: HTTP fail[0m
+[0;32mI (295918) UART_SIM: RAW[105]: 
++CMQTTRXSTART: 0,12,5
++CMQTTRXTOPIC: 0,12
+GC1765606666
++CMQTTRXPAYLOAD: 0,5
+Hoat_
++CMQTTRXEND: 0
+[0m
+[0;32mI (295948) UART_SIM: Received payload: Hoat_[0m
+[0;32mI (295948) UART_SIM: Message: Hoat_[0m
+[0;32mI (295948) UART_SIM: HTTP POST: {"postCode":"GC59286691881","state":2,"paymentDriverCode":"GC8PHV3MEQ","maxAmount":14877,"sessionCode":1775403288501,"pricePost":5000}[0m
+[0;32mI (295958) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (296058) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (296068) UART_SIM: >> AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+[0m
+[0;32mI (296178) UART_SIM: << AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
+OK
+[0m
+[0;32mI (296188) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (296298) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (296308) UART_SIM: >> AT+HTTPDATA=134,10000
+[0m
+[0;32mI (296408) UART_SIM: << AT+HTTPDATA=134,10000
+DOWNLOAD
+[0m
+[0;32mI (296718) UART_SIM: << 
+OK
+[0m
+[0;32mI (296728) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (300158) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,400,113
+[0m
+[0;32mI (300178) UART_SIM: HTTP Status: 400, Data len: 113[0m
+[0;31mE (300188) UART_SIM: HTTP error status: 400[0m
+[0;32mI (300188) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (300288) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (300298) UART_SIM: HTTP fail[0m

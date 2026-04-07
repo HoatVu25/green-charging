@@ -1,0 +1,730 @@
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (45) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (47) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (51) boot: End of partition table[0m
+[0;32mI (51) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (61) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (65) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (94) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (114) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (115) boot: Disabling RNG early entropy source...[0m
+[0;32mI (138) main_task: Started on CPU0[0m
+[0;32mI (178) main_task: Calling app_main()[0m
+[0;32mI (178) uart: queue free spaces: 20[0m
+[0;32mI (178) main_task: Returned from app_main()[0m
+[0;32mI (1178) UART_SIM: >> AT
+[0m
+[0;32mI (1178) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1188) UART_SIM: >> ATZ
+[0m
+[0;32mI (1188) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1198) UART_SIM: >> AT+CPIN?
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0x3fca03d0 0x00000001:0x3fca03d0 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (43) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (45) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (46) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (63) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (92) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (111) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (112) boot: Disabling RNG early entropy source...[0m
+[0;32mI (134) main_task: Started on CPU0[0m
+[0;32mI (174) main_task: Calling app_main()[0m
+[0;32mI (174) uart: queue free spaces: 20[0m
+[0;32mI (174) main_task: Returned from app_main()[0m
+[0;32mI (1174) UART_SIM: >> AT
+[0m
+[0;32mI (1174) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1184) UART_SIM: >> ATZ
+[0m
+[0;32mI (1184) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1194) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1194) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1214) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1214) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1224) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1224) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1234) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (1344) UART_SIM: << AT+CMQTTDISC=0,60
+OK
+
++CMQTTDISC: 0,0
+[0m
+[0;32mI (1364) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (1364) UART_SIM: << AT+CMQTTREL=0
+OK
+[0m
+[0;32mI (1374) UART_SIM: >> AT+CMQTTSTOP
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (43) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (94) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (114) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (115) boot: Disabling RNG early entropy source...[0m
+[0;32mI (137) main_task: Started on CPU0[0m
+[0;32mI (177) main_task: Calling app_main()[0m
+[0;32mI (177) uart: queue free spaces: 20[0m
+[0;32mI (177) main_task: Returned from app_main()[0m
+[0;32mI (1177) UART_SIM: >> AT
+[0m
+[0;32mI (1177) UART_SIM: << �AT
+OK
+[0m
+[0;32mI (1187) UART_SIM: >> ATZ
+[0m
+[0;32mI (1187) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1197) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1197) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1217) UART_SIM: >> AT+CGATT=1
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (94) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (114) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (115) boot: Disabling RNG early entropy source...[0m
+[0;32mI (138) main_task: Started on CPU0[0m
+[0;32mI (178) main_task: Calling app_main()[0m
+[0;32mI (178) uart: queue free spaces: 20[0m
+[0;32mI (178) main_task: Returned from app_main()[0m
+[0;32mI (1178) UART_SIM: >> AT
+[0m
+[0;32mI (1178) UART_SIM: << �AT
+OK
+[0m
+[0;32mI (1188) UART_SIM: >> ATZ
+[0m
+[0;32mI (1188) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1198) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1198) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1208) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1208) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1218) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1218) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1228) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (1308) UART_SIM: << AT+CMQTTDISC=0,60
++CMQTTDISC: 0,11
+
+ERROR
+[0m
+[0;32mI (1328) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (1328) UART_SIM: << AT+CMQTTREL=0
+ERROR
+[0m
+[0;32mI (1338) UART_SIM: >> AT+CMQTTSTOP
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0x3fca03d0 0x00000001:0x3fca03d0 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (92) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (112) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (113) boot: Disabling RNG early entropy source...[0m
+[0;32mI (136) main_task: Started on CPU0[0m
+[0;32mI (176) main_task: Calling app_main()[0m
+[0;32mI (176) uart: queue free spaces: 20[0m
+[0;32mI (176) main_task: Returned from app_main()[0m
+[0;32mI (1176) UART_SIM: >> AT
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (63) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (92) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (111) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (112) boot: Disabling RNG early entropy source...[0m
+[0;32mI (135) main_task: Started on CPU0[0m
+[0;32mI (175) main_task: Calling app_main()[0m
+[0;32mI (175) uart: queue free spaces: 20[0m
+[0;32mI (175) main_task: Returned from app_main()[0m
+[0;32mI (1175) UART_SIM: >> AT
+[0m
+[0;32mI (1175) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1185) UART_SIM: >> ATZ
+[0m
+[0;32mI (1185) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1195) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1195) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1215) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1215) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1225) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1225) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1235) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (1325) UART_SIM: << AT+CMQTTDISC=0,60
++CMQTTDISC: 0,11
+
+ERROR
+[0m
+[0;32mI (1345) UART_SIM: >> AT+CMQTTREL=0
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca0030 0x4037abfd:0x3fca0050 0x4037bb12:0x3fca0070 0x4037cd1b:0x3fca00f0 0x4037bbd8:0x3fca0110 0x4037bbce:0xffffffff |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (63) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (92) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (111) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (112) boot: Disabling RNG early entropy source...[0m
+[0;32mI (134) main_task: Started on CPU0[0m
+[0;32mI (174) main_task: Calling app_main()[0m
+[0;32mI (174) uart: queue free spaces: 20[0m
+[0;32mI (174) main_task: Returned from app_main()[0m
+[0;32mI (1174) UART_SIM: >> AT
+[0m
+[0;32mI (1174) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1184) UART_SIM: >> ATZ
+[0m
+[0;32mI (1184) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1194) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1194) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1214) UART_SIM: >> AT+CGATT=1
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0x0000002c |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (63) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (93) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (112) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (113) boot: Disabling RNG early entropy source...[0m
+[0;32mI (136) main_task: Started on CPU0[0m
+[0;32mI (176) main_task: Calling app_main()[0m
+[0;32mI (176) uart: queue free spaces: 20[0m
+[0;32mI (176) main_task: Returned from app_main()[0m
+[0;32mI (1176) UART_SIM: >> AT
+[0m
+[0;32mI (1176) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1186) UART_SIM: >> ATZ
+[0m
+[0;32mI (1186) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1196) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1196) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1216) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1216) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1226) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (47) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (51) boot: End of partition table[0m
+[0;32mI (51) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (61) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (93) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (112) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (113) boot: Disabling RNG early entropy source...[0m
+[0;32mI (135) main_task: Started on CPU0[0m
+[0;32mI (175) main_task: Calling app_main()[0m
+[0;32mI (175) uart: queue free spaces: 20[0m
+[0;32mI (175) main_task: Returned from app_main()[0m
+[0;32mI (1175) UART_SIM: >> AT
+[0m
+[0;32mI (1175) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1185) UART_SIM: >> ATZ
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (93) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (113) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (114) boot: Disabling RNG early entropy source...[0m
+[0;32mI (136) main_task: Started on CPU0[0m
+[0;32mI (176) main_task: Calling app_main()[0m
+[0;32mI (176) uart: queue free spaces: 20[0m
+[0;32mI (176) main_task: Returned from app_main()[0m
+[0;32mI (1176) UART_SIM: >> AT
+[0m
+[0;32mI (1176) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1186) UART_SIM: >> ATZ
+[0m
+[0;32mI (1186) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1196) UART_SIM: >> AT+CPIN?
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+ReboRebooting...
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (44) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (65) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (93) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (113) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (114) boot: Disabling RNG early entropy source...[0m
+[0;32mI (137) main_task: Started on CPU0[0m
+[0;32mI (177) main_task: Calling app_main()[0m
+[0;32mI (177) uart: queue free spaces: 20[0m
+[0;32mI (177) main_task: Returned from app_main()[0m
+[0;32mI (1177) UART_SIM: >> AT
+[0m
+[0;32mI (1177) UART_SIM: << �AT
+OK
+[0m
+[0;32mI (1187) UART_SIM: >> ATZ
+[0m
+[0;32mI (1187) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1197) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1197) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1217) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1217) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1227) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1227) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1237) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (1317) UART_SIM: << AT+CMQTTDISC=0,60
++CMQTTDISC: 0,11
+
+ERROR
+[0m
+[0;32mI (1337) UART_SIM: >> AT+CMQTTREL=0
+[0m
+
+***ERROR*** A stack overflow in task uart_tx has been detected.
+
+
+Backtrace: 0x40375a36:0x3fca05c0 0x4037abfd:0x3fca05e0 0x4037bb12:0x3fca0600 0x4037cd1b:0x3fca0680 0x4037bbd8:0x3fca06a0 0x4037bbce:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 7fa869241
+
+
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (43) boot: Multicore bootloader[0m
+[0;32mI (45) boot: chip revision: v0.2[0m
+[0;32mI (45) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (45) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (47) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (51) boot: End of partition table[0m
+[0;32mI (51) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c228h ( 49704) map[0m
+[0;32mI (61) esp_image: segment 1: paddr=0001c250 vaddr=3fc93700 size=02a14h ( 10772) load[0m
+[0;32mI (65) esp_image: segment 2: paddr=0001ec6c vaddr=40374000 size=013ach (  5036) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23c10h (146448) map[0m
+[0;32mI (93) esp_image: segment 4: paddr=00043c38 vaddr=403753ac size=0e2b4h ( 58036) load[0m
+[0;32mI (112) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (113) boot: Disabling RNG early entropy source...[0m
+[0;32mI (136) main_task: Started on CPU0[0m
+[0;32mI (176) main_task: Calling app_main()[0m
+[0;32mI (176) uart: queue free spaces: 20[0m
+[0;32mI (176) main_task: Returned from app_main()[0m
+[0;32mI (1176) UART_SIM: >> AT
+[0m
+[0;32mI (1176) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1186) UART_SIM: >> ATZ
+[0m
+[0;32mI (1186) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1196) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1196) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1216) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1216) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1226) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1226) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1236) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;32mI (1316) UART_SIM: << AT+CMQTTDISC=0,60
++CMQTTDISC: 0,11
+
+ERROR
+[0m
+[0;32mI (1336) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;32mI (1336) UART_SIM: << AT+CMQTTREL=0
+ERROR
+[0m
+[0;32mI (1346) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;32mI (1346) UART_SIM: << AT+CMQTTSTOP
+ERROR
+[0m
+[0;32mI (3356) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (3356) UART_SIM: << AT+CMQTTSTART
+OK
+[0m

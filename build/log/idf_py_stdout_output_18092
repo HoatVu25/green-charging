@@ -1,0 +1,114 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\vuhuu\OneDrive\Desktop\green_charging\green-charging\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader/bootloader.bin"
+Bootloader binary size 0x52d0 bytes. 0x2d30 bytes (35%) free.
+[2/8] Building C object esp-idf/uart_sim/CMakeFiles/__idf_uart_sim.dir/uart_sim.c.obj
+[3/8] Linking C static library esp-idf\uart_sim\libuart_sim.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable green_charge_firmware.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/green_charge_firmware.bin
+[7/8] cmd.exe /C "cd /D C:\Users\vuhuu\OneDrive\Desktop\green_charging\green-charging\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/partition_table/partition-table.bin C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/green_charge_firmware.bin"
+green_charge_firmware.bin binary size 0x3b580 bytes. Smallest app partition is 0x100000 bytes. 0xc4a80 bytes (77%) free.
+[7/8] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.3.1\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.3.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.3_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@fesptool.py --chip esp32s3 -p COM14 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 green_charge_firmware.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM14
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: 50:78:7d:07:3e:90
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x0004bfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21200 bytes to 13130...
+Writing at 0x00000000... (14 %)
+Writing at 0x00001554... (28 %)
+Writing at 0x000021e7... (42 %)
+Writing at 0x00002d9f... (57 %)
+Writing at 0x00003865... (71 %)
+Writing at 0x0000428f... (85 %)
+Writing at 0x00004d75... (100 %)
+Wrote 21200 bytes (13130 compressed) at 0x00000000 in 0.2 seconds (effective 725.7 kbit/s)...
+Hash of data verified.
+Compressed 243072 bytes to 122094...
+Writing at 0x00010000... (1 %)
+Writing at 0x00011143... (3 %)
+Writing at 0x00012c35... (5 %)
+Writing at 0x00014942... (6 %)
+Writing at 0x00016155... (8 %)
+Writing at 0x00017faf... (10 %)
+Writing at 0x000193e1... (11 %)
+Writing at 0x0001ae91... (13 %)
+Writing at 0x0001d4f1... (15 %)
+Writing at 0x0001ec75... (16 %)
+Writing at 0x0001f885... (18 %)
+Writing at 0x00020356... (20 %)
+Writing at 0x00020f20... (21 %)
+Writing at 0x00021b40... (23 %)
+Writing at 0x00022718... (25 %)
+Writing at 0x000232f0... (26 %)
+Writing at 0x00023d2f... (28 %)
+Writing at 0x000249c5... (30 %)
+Writing at 0x000259fd... (31 %)
+Writing at 0x0002664c... (33 %)
+Writing at 0x00027230... (35 %)
+Writing at 0x00027ef1... (36 %)
+Writing at 0x00028f18... (38 %)
+Writing at 0x00029da2... (40 %)
+Writing at 0x0002a93f... (41 %)
+Writing at 0x0002b51b... (43 %)
+Writing at 0x0002c1cc... (45 %)
+Writing at 0x0002ceb3... (46 %)
+Writing at 0x0002daba... (48 %)
+Writing at 0x0002e5eb... (50 %)
+Writing at 0x0002f1e1... (51 %)
+Writing at 0x0002fdcb... (53 %)
+Writing at 0x0003121d... (55 %)
+Writing at 0x00031f8d... (56 %)
+Writing at 0x00034d80... (58 %)
+Writing at 0x000363e7... (60 %)
+Writing at 0x00037a82... (61 %)
+Writing at 0x000384ae... (63 %)
+Writing at 0x00038ea7... (65 %)
+Writing at 0x0003a8cf... (66 %)
+Writing at 0x0003c12d... (68 %)
+Writing at 0x0003ce31... (70 %)
+Writing at 0x0003d7ef... (71 %)
+Writing at 0x0003e380... (73 %)
+Writing at 0x0003ef17... (75 %)
+Writing at 0x0003faa6... (76 %)
+Writing at 0x00040670... (78 %)
+Writing at 0x000414b0... (80 %)
+Writing at 0x00042047... (81 %)
+Writing at 0x00042be1... (83 %)
+Writing at 0x00043773... (85 %)
+Writing at 0x000442b6... (86 %)
+Writing at 0x00044fab... (88 %)
+Writing at 0x00045e1d... (90 %)
+Writing at 0x00046a87... (91 %)
+Writing at 0x00047ac3... (93 %)
+Writing at 0x00048617... (95 %)
+Writing at 0x00049102... (96 %)
+Writing at 0x00049d15... (98 %)
+Writing at 0x0004ae25... (100 %)
+Wrote 243072 bytes (122094 compressed) at 0x00010000 in 1.7 seconds (effective 1132.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 776.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+lash_args -D WORKING_DIRECTORY=C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build -P C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/run_serial_tool.cmake"

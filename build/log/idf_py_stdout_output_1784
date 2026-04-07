@@ -1,0 +1,441 @@
+[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (47) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (51) boot: End of partition table[0m
+[0;32mI (51) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0c548h ( 50504) map[0m
+[0;32mI (60) esp_image: segment 1: paddr=0001c570 vaddr=3fc93600 size=02a14h ( 10772) load[0m
+[0;32mI (63) esp_image: segment 2: paddr=0001ef8c vaddr=40374000 size=0108ch (  4236) load[0m
+[0;32mI (64) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=23d90h (146832) map[0m
+[0;32mI (91) esp_image: segment 4: paddr=00043db8 vaddr=4037508c size=0e4cch ( 58572) load[0m
+[0;32mI (111) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (112) boot: Disabling RNG early entropy source...[0m
+[0;32mI (134) main_task: Started on CPU0[0m
+[0;32mI (174) main_task: Calling app_main()[0m
+[0;32mI (174) main_task: Returned from app_main()[0m
+[0;32mI (1174) UART_SIM: >> AT
+[0m
+[0;32mI (1274) UART_SIM: << AT
+OK
+[0m
+[0;32mI (1284) UART_SIM: >> ATZ
+[0m
+[0;32mI (1384) UART_SIM: << ATZ
+OK
+[0m
+[0;32mI (1394) UART_SIM: >> AT+CPIN?
+[0m
+[0;32mI (1494) UART_SIM: << AT+CPIN?
++CPIN: READY
+
+OK
+[0m
+[0;32mI (1514) UART_SIM: >> AT+CGATT=1
+[0m
+[0;32mI (1614) UART_SIM: << AT+CGATT=1
+OK
+[0m
+[0;32mI (1624) UART_SIM: >> AT+CGDCONT=1,"IP","v-internet"
+[0m
+[0;32mI (1724) UART_SIM: << AT+CGDCONT=1,"IP","v-internet"
+OK
+[0m
+[0;32mI (1724) UART_SIM: >> AT+CMQTTDISC=0,60
+[0m
+[0;31mE (4734) UART_SIM: FAIL: AT+CMQTTDISC=0,60
+[0m
+[0;32mI (4734) UART_SIM: >> AT+CMQTTREL=0
+[0m
+[0;31mE (7744) UART_SIM: FAIL: AT+CMQTTREL=0
+[0m
+[0;32mI (7744) UART_SIM: >> AT+CMQTTSTOP
+[0m
+[0;31mE (10754) UART_SIM: FAIL: AT+CMQTTSTOP
+[0m
+[0;32mI (12754) UART_SIM: >> AT+CMQTTSTART
+[0m
+[0;32mI (12984) UART_SIM: << AT+CMQTTSTART
+OK
+
++CMQTTSTART: 0
+[0m
+[0;32mI (13504) UART_SIM: >> AT+CMQTTACCQ=0,"Hoat_Vu"
+[0m
+[0;32mI (13614) UART_SIM: << AT+CMQTTACCQ=0,"Hoat_Vu"
+OK
+[0m
+[0;32mI (14124) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+[0m
+[0;32mI (14374) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
+OK
+
++CMQTTCONNECT: 0,0
+[0m
+[0;32mI (14404) UART_SIM: MQTT CONNECTTED![0m
+[0;32mI (14404) UART_SIM: >> AT+CMQTTSUB=0,12,1
+[0m
+[0;32mI (14504) UART_SIM: << AT+CMQTTSUB=0,12,1
+>[0m
+[0;32mI (19734) UART_SIM: << 
+OK
+
++CMQTTSUB: 0,0
+[0m
+[0;32mI (19754) UART_SIM: SUBSCRIBE OK: GC1765606666[0m
+[0;32mI (57504) UART_SIM: Received data: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (57514) UART_SIM: HTTP POST attempt 1: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (57524) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (57624) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (57634) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (57744) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (57754) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (57864) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (57874) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (57974) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (58294) UART_SIM: << 
+OK
+[0m
+[0;32mI (58304) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (64744) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (64764) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (64764) UART_SIM: HTTP error status: 502[0m
+[0;32mI (64764) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (64864) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (64874) UART_SIM: HTTP POST attempt 2: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (64884) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (64984) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (64994) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (65104) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (65124) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (65234) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (65254) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (65354) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (65674) UART_SIM: << 
+OK
+[0m
+[0;32mI (65684) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (70414) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (70434) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (70434) UART_SIM: HTTP error status: 502[0m
+[0;32mI (70434) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (70534) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (70544) UART_SIM: HTTP POST attempt 3: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (70554) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (70654) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (70664) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (70774) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (70794) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (70904) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (70924) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (71024) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (71344) UART_SIM: << 
+OK
+[0m
+[0;32mI (71354) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (75984) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (76004) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (76004) UART_SIM: HTTP error status: 502[0m
+[0;32mI (76004) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (76104) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;31mE (76114) UART_SIM: HTTP POST failed [0m
+[0;32mI (106114) UART_SIM: Received data: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (106124) UART_SIM: HTTP POST attempt 1: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (106134) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (106234) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (106244) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (106354) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (106374) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (106484) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (106504) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (106604) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (106924) UART_SIM: << 
+OK
+[0m
+[0;32mI (106934) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (113354) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (113374) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (113374) UART_SIM: HTTP error status: 502[0m
+[0;32mI (113374) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (113474) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (113484) UART_SIM: HTTP POST attempt 2: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (113494) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (113594) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (113604) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (113714) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (113734) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (113844) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (113864) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (113964) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (114284) UART_SIM: << 
+OK
+[0m
+[0;32mI (114294) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (118914) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (118934) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (118934) UART_SIM: HTTP error status: 502[0m
+[0;32mI (118934) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (119034) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (119044) UART_SIM: HTTP POST attempt 3: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (119054) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (119154) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (119164) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (119274) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (119284) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (119394) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (119414) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (119514) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (119834) UART_SIM: << 
+OK
+[0m
+[0;32mI (119844) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (124474) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (124494) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (124494) UART_SIM: HTTP error status: 502[0m
+[0;32mI (124494) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (124594) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;31mE (124604) UART_SIM: HTTP POST failed [0m
+[0;32mI (136604) UART_SIM: Received data: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (136614) UART_SIM: HTTP POST attempt 1: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (136624) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (136724) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (136734) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (136844) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (136864) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (136974) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (136994) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (137094) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (137414) UART_SIM: << 
+OK
+[0m
+[0;32mI (137424) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (143804) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (143824) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (143824) UART_SIM: HTTP error status: 502[0m
+[0;32mI (143824) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (143924) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (143934) UART_SIM: HTTP POST attempt 2: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (143944) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (144044) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (144054) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (144164) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (144184) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (144294) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (144314) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (144414) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (144734) UART_SIM: << 
+OK
+[0m
+[0;32mI (144744) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (149354) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (149374) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (149374) UART_SIM: HTTP error status: 502[0m
+[0;32mI (149374) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (149474) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;32mI (149484) UART_SIM: HTTP POST attempt 3: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
+[0;32mI (149494) UART_SIM: >> AT+HTTPINIT
+[0m
+[0;32mI (149594) UART_SIM: << AT+HTTPINIT
+OK
+[0m
+[0;32mI (149604) UART_SIM: >> AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+[0m
+[0;32mI (149714) UART_SIM: << AT+HTTPPARA="URL","https://669dbe7d481a9db0-1-54-164-179.serveousercontent.com"
+OK
+[0m
+[0;32mI (149724) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
+[0m
+[0;32mI (149834) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
+OK
+[0m
+[0;32mI (149854) UART_SIM: >> AT+HTTPDATA=119,10000
+[0m
+[0;32mI (149954) UART_SIM: << AT+HTTPDATA=119,10000
+DOWNLOAD
+[0m
+[0;32mI (150274) UART_SIM: << 
+OK
+[0m
+[0;32mI (150284) UART_SIM: >> AT+HTTPACTION=1
+[0m
+[0;32mI (154954) UART_SIM: << AT+HTTPACTION=1
+OK
+
++HTTPACTION: 1,502,0
+[0m
+[0;32mI (154974) UART_SIM: HTTP Status: 502, Data len: 0[0m
+[0;31mE (154974) UART_SIM: HTTP error status: 502[0m
+[0;32mI (154974) UART_SIM: >> AT+HTTPTERM
+[0m
+[0;32mI (155074) UART_SIM: << AT+HTTPTERM
+OK
+[0m
+[0;31mE (155084) UART_SIM: HTTP POST failed [0m
