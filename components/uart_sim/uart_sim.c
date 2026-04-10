@@ -130,7 +130,7 @@ bool mqtt_listen(char *data, int timeout) {
 
 bool http_connect(const char *url) {
     char cmd_buffer[256];
-    sim_send_at("AT+HTTPTERM\r\n", "OK", 1000);
+    sim_send_at("AT+HTTPTERM\r\n", "OK", 3000);
 
     if (!sim_send_at("AT+HTTPINIT\r\n", "OK", 3000)) {
         return false;
@@ -138,16 +138,16 @@ bool http_connect(const char *url) {
 
     snprintf(cmd_buffer, sizeof(cmd_buffer), "AT+HTTPPARA=\"URL\",\"%s\"\r\n", url);
     if (!sim_send_at(cmd_buffer, "OK", 3000)) {
-        sim_send_at("AT+HTTPTERM\r\n", "OK", 1000);
+        sim_send_at("AT+HTTPTERM\r\n", "OK", 3000);
         return false;
     }
 
     if (!sim_send_at("AT+HTTPPARA=\"CONTENT\",\"application/json\"\r\n", "OK", 3000)) {
-        sim_send_at("AT+HTTPTERM\r\n", "OK", 1000);
+        sim_send_at("AT+HTTPTERM\r\n", "OK", 3000);
         return false;
     }
 
-    sim_send_at("AT+HTTPTERM\r\n", "OK", 2000);
+    sim_send_at("AT+HTTPTERM\r\n", "OK", 3000);
     return true;
 }
 
@@ -156,20 +156,19 @@ bool post_http(const char *url, const char *json_data) {
     char cmd[256];
     int data_len = strlen(json_data);
 
-    sim_send_at("AT+HTTPTERM\r\n", "OK", 1000); 
+    sim_send_at("AT+HTTPTERM\r\n", "OK", 3000); 
 
     if (sim_send_at("AT+HTTPINIT\r\n", "OK", 3000)) {
         
         snprintf(cmd, sizeof(cmd), "AT+HTTPPARA=\"URL\",\"%s\"\r\n", url);
-        if (sim_send_at(cmd, "OK", 3000) && 
-            sim_send_at("AT+HTTPPARA=\"CONTENT\",\"application/json\"\r\n", "OK", 3000)) {
+        if (sim_send_at(cmd, "OK", 3000) && sim_send_at("AT+HTTPPARA=\"CONTENT\",\"application/json\"\r\n", "OK", 3000)) {
             
             snprintf(cmd, sizeof(cmd), "AT+HTTPDATA=%d,10000\r\n", data_len);
             if (sim_send_at(cmd, "DOWNLOAD", 5000)) {
                 uart_write_bytes(SIM_UART, json_data, data_len);
                 
                 if (sim_send_at("", "OK", 5000)) {
-                    if (sim_send_at("AT+HTTPACTION=1\r\n", "+HTTPACTION: 1,200", 15000)) {
+                    if (sim_send_at("AT+HTTPACTION=1\r\n", "+HTTPACTION: 1,200", 5000)) {
                         ESP_LOGI(TAG, "POST HTTP COMPLETED SUCCESSFULLY!");
                         success = true;
                     }
@@ -329,6 +328,7 @@ void uart_task(void *pvParameters) {
     static char mqtt_payload[BUFFER_SIZE];
     memset(mqtt_payload, 0, sizeof(mqtt_payload));
 
+    event_queue=xQueueCreate(10,sizeof(network_event_t));
     event_sys evt_sys;
     evt_sys.net_evt = NET_EVT_INIT; 
     xQueueSend(event_queue,&evt_sys.net_evt,portMAX_DELAY);
@@ -340,7 +340,7 @@ void uart_task(void *pvParameters) {
     }
     else {
         evt_sys.mqtt_evt = MQTT_EVT_CONNECT;
-        xQueueSend(event_queue,&evt_sys.net_evt,portMAX_DELAY);
+        xQueueSend(event_queue,&evt_sys.mqtt_evt,portMAX_DELAY);
     }
     if (!mqtt_check()) {
         ESP_LOGE(TAG, "MQTT FAIL!");
@@ -348,8 +348,8 @@ void uart_task(void *pvParameters) {
         esp_restart();
     }
     else{
-        evt_sys.mqtt_evt = HTTP_EVT_CONNECT;
-        xQueueSend(event_queue,&evt_sys.net_evt,portMAX_DELAY);
+        evt_sys.http_evt = HTTP_EVT_CONNECT;
+        xQueueSend(event_queue,&evt_sys.http_evt,portMAX_DELAY);
     }
     if (!http_check()) {
         ESP_LOGE(TAG, "HTTP FAIL!");
@@ -358,16 +358,14 @@ void uart_task(void *pvParameters) {
     }
 
     while (1) {
-        if (evt_sys.net_evt == NET_EVT_READY && evt_sys.mqtt_evt == MQTT_EVT_READY && evt_sys.http_evt == HTTP_EVT_READY){
-            if (mqtt_listen(mqtt_payload, 3000)) {
-                if (post_http(HTTP_URL, mqtt_payload)) {
-                    memset(mqtt_payload, 0, sizeof(mqtt_payload));
-                } else {
-                    vTaskDelay(pdMS_TO_TICKS(1000));
-                    esp_restart(); 
-                }
+        if (mqtt_listen(mqtt_payload, 3000)) {
+            if (post_http(HTTP_URL, mqtt_payload)) {
+                memset(mqtt_payload, 0, sizeof(mqtt_payload));
+            } else {
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                esp_restart(); 
             }
         }
-        vTaskDelay(pdMS_TO_TICKS(20)); 
     }
+    vTaskDelay(pdMS_TO_TICKS(20)); 
 }
