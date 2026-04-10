@@ -20,14 +20,36 @@ bool mqtt_listen(char *data, int timeout);
 bool http_confirm_start_charging(const char *data);
 
 typedef enum {
-    EVT_SIM_READY,
-    EVT_SIM_SIGNAL_OK,
-    EVT_GPRS_CONNECTED,
-    EVT_MQTT_CONNECTED,
-    EVT_MQTT_MESSAGE,
-    EVT_NETWORK_LOST,
-    EVT_HTTP_CONNECTED,
-    EVT_RETRY,
-    EVT_GET_MESSAGE_MQTT,
-    EVT_POST_HTTP
-} system_event_t;
+    NET_EVT_IDLE,
+    NET_EVT_INIT,
+    NET_EVT_WAIT_GPRS,
+    NET_EVT_READY,
+    NET_EVT_RETRY,       
+    NET_EVT_ERROR
+} network_event_t;
+
+typedef enum {  
+    MQTT_EVT_IDLE,    
+    MQTT_EVT_CONNECT,
+    MQTT_EVT_SUBSCRIBE,
+    MQTT_EVT_READY,
+    MQTT_EVT_LISTEN,
+    MQTT_EVT_RETRY,      
+    MQTT_EVT_ERROR
+} mqtt_event_t;
+
+typedef enum {
+    HTTP_EVT_IDLE,
+    HTTP_EVT_CONNECT,
+    HTTP_EVT_READY,
+    HTTP_EVT_POST_DATA,
+    HTTP_EVT_RETRY,
+    HTTP_EVT_ERROR
+} http_event_t;
+
+
+typedef struct {
+    network_event_t net_evt;
+    mqtt_event_t mqtt_evt;
+    http_event_t http_evt;
+} event_sys;
