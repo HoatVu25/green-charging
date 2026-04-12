@@ -5,18 +5,18 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "C:/Espressif/frameworks/esp-idf-v5.3.1/components/bootloader/subproject"
-  "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader"
-  "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader-prefix"
-  "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader-prefix/tmp"
-  "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader-prefix/src"
-  "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/IDF/green_charging/green-charging/build/bootloader"
+  "C:/IDF/green_charging/green-charging/build/bootloader-prefix"
+  "C:/IDF/green_charging/green-charging/build/bootloader-prefix/tmp"
+  "C:/IDF/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/IDF/green_charging/green-charging/build/bootloader-prefix/src"
+  "C:/IDF/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/IDF/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/IDF/green_charging/green-charging/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/data_control
+# Install script for directory: C:/IDF/green_charging/green-charging/components/data_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

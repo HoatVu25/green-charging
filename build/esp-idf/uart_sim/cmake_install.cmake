@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/uart_sim
+# Install script for directory: C:/IDF/green_charging/green-charging/components/uart_sim
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

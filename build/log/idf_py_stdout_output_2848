@@ -1,312 +1,0 @@
-[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
-[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
-[0;32mI (42) boot: Multicore bootloader[0m
-[0;32mI (43) boot: chip revision: v0.2[0m
-[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
-[0;32mI (45) boot.esp32s3: SPI Mode       : DIO[0m
-[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
-[0;32mI (46) boot: Enabling RNG early entropy source...[0m
-[0;32mI (46) boot: Partition Table:[0m
-[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (48) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (49) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (52) boot: End of partition table[0m
-[0;32mI (52) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd90h ( 48528) map[0m
-[0;32mI (62) esp_image: segment 1: paddr=0001bdb8 vaddr=3fc93700 size=02a14h ( 10772) load[0m
-[0;32mI (64) esp_image: segment 2: paddr=0001e7d4 vaddr=40374000 size=01844h (  6212) load[0m
-[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1da44h (121412) map[0m
-[0;32mI (89) esp_image: segment 4: paddr=0003da6c vaddr=40375844 size=0de08h ( 56840) load[0m
-[0;32mI (108) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (109) boot: Disabling RNG early entropy source...[0m
-[0;32mI (132) main_task: Started on CPU0[0m
-[0;32mI (172) main_task: Calling app_main()[0m
-[0;32mI (172) UART_SIM: >> AT
-[0m
-[0;32mI (172) main_task: Returned from app_main()[0m
-[0;32mI (202) UART_SIM: << AT
-OK
-[0m
-[0;32mI (212) UART_SIM: >> AT+CPIN?
-[0m
-[0;32mI (232) UART_SIM: << AT+CPIN?
-+CPIN: READY
-
-OK
-[0m
-[0;32mI (252) UART_SIM: SIM READY COMPLETED[0m
-[0;32mI (252) UART_SIM: >> AT+CSQ
-[0m
-[0;32mI (272) UART_SIM: << AT+CSQ
-+CSQ: 23,99
-
-OK
-[0m
-[0;32mI (292) UART_SIM: >> AT+CREG?
-[0m
-[0;32mI (322) UART_SIM: << AT+CREG?
-+CREG: 0,1
-
-OK
-[0m
-[0;32mI (342) UART_SIM: >> AT+CGATT?
-[0m
-[0;32mI (362) UART_SIM: << AT+CGATT?
-+CGATT: 1
-
-OK
-[0m
-[0;32mI (382) UART_SIM: >> AT+CMQTTDISC=0,60
-[0m
-[0;31mE (402) UART_SIM: << ERROR: AT+CMQTTDISC=0,60
-+CMQTTDISC: 0,11
-
-ERROR
-[0m
-[0;32mI (422) UART_SIM: >> AT+CMQTTREL=0
-[0m
-[0;31mE (442) UART_SIM: << ERROR: AT+CMQTTREL=0
-+CMQTTREL: 0,20
-
-ERROR
-[0m
-[0;32mI (462) UART_SIM: >> AT+CMQTTSTOP
-[0m
-[0;32mI (482) UART_SIM: << AT+CMQTTSTOP
-OK
-
-+CMQTTSTOP: 0
-[0m
-[0;32mI (502) UART_SIM: >> AT+CMQTTSTART
-[0m
-[0;32mI (642) UART_SIM: << AT+CMQTTSTART
-OK
-
-+CMQTTSTART: 0
-[0m
-[0;32mI (662) UART_SIM: >> AT+CMQTTACCQ=0,"GREEN_CHARGING"
-[0m
-[0;32mI (682) UART_SIM: << AT+CMQTTACCQ=0,"GREEN_CHARGING"
-OK
-[0m
-[0;32mI (692) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-[0m
-[0;32mI (872) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-OK
-
-+CMQTTCONNECT: 0,0
-[0m
-[0;32mI (902) UART_SIM: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (922) UART_SIM: << AT+CMQTTSUB=0,12,1
->[0m
-[0;32mI (1172) UART_SIM: << 
-OK
-
-+CMQTTSUB: 0,0
-[0m
-[0;32mI (1192) UART_SIM: MQTT SUBSCRIBED: GC1765606666[0m
-[0;32mI (1192) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;31mE (1212) UART_SIM: << ERROR: AT+HTTPTERM
-ERROR
-[0m
-[0;32mI (1222) UART_SIM: >> AT+HTTPINIT
-[0m
-[0;32mI (1242) UART_SIM: << AT+HTTPINIT
-OK
-[0m
-[0;32mI (1252) UART_SIM: >> AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
-[0m
-[0;32mI (1282) UART_SIM: << AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
-OK
-[0m
-[0;32mI (1302) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
-[0m
-[0;32mI (1332) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
-OK
-[0m
-[0;32mI (1352) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;32mI (1372) UART_SIM: << AT+HTTPTERM
-OK
-[0m
-[0;32mI (1382) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;31mE (1412) UART_SIM: << ERROR: AT+HTTPTERM
-ERROR
-[0m
-[0;32mI (45932) UART_SIM: Received payload: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
-[0;32mI (45942) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;31mE (45962) UART_SIM: << ERROR: AT+HTTPTERM
-ERROR
-[0m
-[0;32mI (45972) UART_SIM: >> AT+HTTPINIT
-[0m
-[0;32mI (45992) UART_SIM: << AT+HTTPINIT
-OK
-[0m
-[0;32mI (46002) UART_SIM: >> AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
-[0m
-[0;32mI (46032) UART_SIM: << AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
-OK
-[0m
-[0;32mI (46042) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
-[0m
-[0;32mI (46072) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
-OK
-[0m
-[0;32mI (46082) UART_SIM: >> AT+HTTPDATA=119,10000
-[0m
-[0;32mI (46102) UART_SIM: << AT+HTTPDATA=119,10000
-DOWNLOAD
-[0m
-[0;32mI (46142) UART_SIM: << 
-OK
-[0m
-[0;32mI (46152) UART_SIM: >> AT+HTTPACTION=1
-[0m
-[0;31mE (61152) UART_SIM: FAIL : AT+HTTPACTION=1
-[0m
-[0;32mI (61152) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;32mI (61182) UART_SIM: << AT+HTTPTERM
-OK
-[0m
-[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
-[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
-[0;32mI (42) boot: Multicore bootloader[0m
-[0;32mI (43) boot: chip revision: v0.2[0m
-[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
-[0;32mI (45) boot.esp32s3: SPI Mode       : DIO[0m
-[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
-[0;32mI (46) boot: Enabling RNG early entropy source...[0m
-[0;32mI (46) boot: Partition Table:[0m
-[0;32mI (47) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (48) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (49) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (50) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (52) boot: End of partition table[0m
-[0;32mI (52) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd90h ( 48528) map[0m
-[0;32mI (62) esp_image: segment 1: paddr=0001bdb8 vaddr=3fc93700 size=02a14h ( 10772) load[0m
-[0;32mI (65) esp_image: segment 2: paddr=0001e7d4 vaddr=40374000 size=01844h (  6212) load[0m
-[0;32mI (67) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1da44h (121412) map[0m
-[0;32mI (90) esp_image: segment 4: paddr=0003da6c vaddr=40375844 size=0de08h ( 56840) load[0m
-[0;32mI (109) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (110) boot: Disabling RNG early entropy source...[0m
-[0;32mI (134) main_task: Started on CPU0[0m
-[0;32mI (174) main_task: Calling app_main()[0m
-[0;32mI (174) UART_SIM: >> AT
-[0m
-[0;32mI (174) main_task: Returned from app_main()[0m
-[0;32mI (194) UART_SIM: << AT
-OK
-[0m
-[0;32mI (204) UART_SIM: >> AT+CPIN?
-[0m
-[0;32mI (234) UART_SIM: << AT+CPIN?
-+CPIN: READY
-
-OK
-[0m
-[0;32mI (254) UART_SIM: SIM READY COMPLETED[0m
-[0;32mI (254) UART_SIM: >> AT+CSQ
-[0m
-[0;32mI (274) UART_SIM: << AT+CSQ
-+CSQ: 23,99
-
-OK
-[0m
-[0;32mI (294) UART_SIM: >> AT+CREG?
-[0m
-[0;32mI (314) UART_SIM: << AT+CREG?
-+CREG: 0,1
-
-OK
-[0m
-[0;32mI (334) UART_SIM: >> AT+CGATT?
-[0m
-[0;32mI (354) UART_SIM: << AT+CGATT?
-+CGATT: 1
-
-OK
-[0m
-[0;32mI (374) UART_SIM: >> AT+CMQTTDISC=0,60
-[0m
-[0;32mI (424) UART_SIM: << AT+CMQTTDISC=0,60
-OK
-
-+CMQTTDISC: 0,0
-[0m
-[0;32mI (444) UART_SIM: >> AT+CMQTTREL=0
-[0m
-[0;32mI (464) UART_SIM: << AT+CMQTTREL=0
-OK
-[0m
-[0;32mI (474) UART_SIM: >> AT+CMQTTSTOP
-[0m
-[0;32mI (494) UART_SIM: << AT+CMQTTSTOP
-OK
-
-+CMQTTSTOP: 0
-[0m
-[0;32mI (514) UART_SIM: >> AT+CMQTTSTART
-[0m
-[0;32mI (664) UART_SIM: << AT+CMQTTSTART
-OK
-
-+CMQTTSTART: 0
-[0m
-[0;32mI (684) UART_SIM: >> AT+CMQTTACCQ=0,"GREEN_CHARGING"
-[0m
-[0;32mI (704) UART_SIM: << AT+CMQTTACCQ=0,"GREEN_CHARGING"
-OK
-[0m
-[0;32mI (714) UART_SIM: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-[0m
-[0;32mI (794) UART_SIM: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-OK
-
-+CMQTTCONNECT: 0,0
-[0m
-[0;32mI (824) UART_SIM: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (844) UART_SIM: << AT+CMQTTSUB=0,12,1
->[0m
-[0;32mI (1094) UART_SIM: << 
-OK
-
-+CMQTTSUB: 0,0
-[0m
-[0;32mI (1114) UART_SIM: MQTT SUBSCRIBED: GC1765606666[0m
-[0;32mI (1114) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;31mE (1134) UART_SIM: << ERROR: AT+HTTPTERM
-ERROR
-[0m
-[0;32mI (1144) UART_SIM: >> AT+HTTPINIT
-[0m
-[0;32mI (1164) UART_SIM: << AT+HTTPINIT
-OK
-[0m
-[0;32mI (1174) UART_SIM: >> AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
-[0m
-[0;32mI (1204) UART_SIM: << AT+HTTPPARA="URL","https://api.kullhi.id.vn/charging-post/confirm-start-charging"
-OK
-[0m
-[0;32mI (1224) UART_SIM: >> AT+HTTPPARA="CONTENT","application/json"
-[0m
-[0;32mI (1254) UART_SIM: << AT+HTTPPARA="CONTENT","application/json"
-OK
-[0m
-[0;32mI (1264) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;32mI (1284) UART_SIM: << AT+HTTPTERM
-OK
-[0m
-[0;32mI (1294) UART_SIM: >> AT+HTTPTERM
-[0m
-[0;31mE (1324) UART_SIM: << ERROR: AT+HTTPTERM
-ERROR
-[0m

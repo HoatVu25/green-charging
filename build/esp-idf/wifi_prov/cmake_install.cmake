@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vuhuu/OneDrive/Desktop/green_charging/green-charging/components/wifi_prov
+# Install script for directory: C:/IDF/green_charging/green-charging/components/wifi_prov
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

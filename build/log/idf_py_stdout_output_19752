@@ -1,198 +1,0 @@
-[0;32mI (41) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
-[0;32mI (42) boot: compile time Apr  4 2026 10:21:03[0m
-[0;32mI (42) boot: Multicore bootloader[0m
-[0;32mI (43) boot: chip revision: v0.2[0m
-[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
-[0;32mI (44) boot.esp32s3: SPI Mode       : DIO[0m
-[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
-[0;32mI (45) boot: Enabling RNG early entropy source...[0m
-[0;32mI (46) boot: Partition Table:[0m
-[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (47) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (51) boot: End of partition table[0m
-[0;32mI (51) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bc80h ( 48256) map[0m
-[0;32mI (61) esp_image: segment 1: paddr=0001bca8 vaddr=3fc93700 size=02a14h ( 10772) load[0m
-[0;32mI (64) esp_image: segment 2: paddr=0001e6c4 vaddr=40374000 size=01954h (  6484) load[0m
-[0;32mI (66) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1d8d0h (121040) map[0m
-[0;32mI (88) esp_image: segment 4: paddr=0003d8f8 vaddr=40375954 size=0dcf8h ( 56568) load[0m
-[0;32mI (107) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (108) boot: Disabling RNG early entropy source...[0m
-[0;32mI (132) main_task: Started on CPU0[0m
-[0;32mI (172) main_task: Calling app_main()[0m
-[0;32mI (172) SIM_FLOW: >> AT
-[0m
-[0;32mI (172) main_task: Returned from app_main()[0m
-[0;32mI (292) SIM_FLOW: << AT
-OK[0m
-[0;32mI (292) SIM_FLOW: >> AT+CPIN?
-[0m
-[0;32mI (742) SIM_FLOW: << AT+CPIN?
-+CPIN: READY[0m
-[0;32mI (742) SIM_FLOW: CONNECTING COMPLETED[0m
-[0;32mI (752) SIM_FLOW: >> AT+CSQ
-[0m
-[0;32mI (1252) SIM_FLOW: << AT+CSQ
-+CSQ: 21,99
-
-OK[0m
-[0;32mI (1262) SIM_FLOW: >> AT+CREG?
-[0m
-[0;32mI (1672) SIM_FLOW: << AT+CREG?
-+CREG: 0,1[0m
-[0;32mI (1672) SIM_FLOW: >> AT+CGATT?
-[0m
-[0;32mI (2082) SIM_FLOW: << AT+CGATT?
-+CGATT: 1[0m
-[0;32mI (2092) SIM_FLOW: >> AT+CMQTTDISC=0,60
-[0m
-[0;32mI (2512) SIM_FLOW: << AT+CMQTTDISC=0,60
-OK[0m
-[0;32mI (2512) SIM_FLOW: >> AT+CMQTTREL=0
-[0m
-[0;32mI (2852) SIM_FLOW: << AT+CMQTTREL=0
-OK[0m
-[0;32mI (2852) SIM_FLOW: >> AT+CMQTTSTOP
-[0m
-[0;32mI (3172) SIM_FLOW: << AT+CMQTTSTOP
-OK[0m
-[0;32mI (3172) SIM_FLOW: >> AT+CMQTTSTART
-[0m
-[0;32mI (3872) SIM_FLOW: << AT+CMQTTSTART
-OK
-
-+CMQTTSTART: 0[0m
-[0;32mI (3882) SIM_FLOW: >> AT+CMQTTACCQ=0,"GREEN_CHARGING"
-[0m
-[0;32mI (4582) SIM_FLOW: << AT+CMQTTACCQ=0,"GREEN_CHARGING"
-OK[0m
-[0;32mI (4582) SIM_FLOW: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-[0m
-[0;32mI (6112) SIM_FLOW: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-OK
-
-+CMQTTCONNECT: 0,0[0m
-[0;32mI (6132) SIM_FLOW: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (6552) SIM_FLOW: << AT+CMQTTSUB=0,12,1
->[0m
-[0;32mI (6612) SIM_FLOW: << 
-OK[0m
-[0;32mI (6612) SIM_FLOW: MQTT CONNECTED[0m
-[0;32mI (6622) SIM_FLOW: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (7042) SIM_FLOW: << AT+CMQTTSUB=0,12,1
->[0m
-[0;32mI (62302) SIM_FLOW: Received data: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
-[0;32mI (62322) SIM_FLOW: >> AT+HTTPTERM
-[0m
-[0;31mE (62682) SIM_FLOW: << ERROR: AT+HTTPTERM
-ERROR[0m
-[0;32mI (62682) SIM_FLOW: >> AT+HTTPINIT
-[0m
-[0;32mI (62992) SIM_FLOW: << AT+HTTPINIT
-OK[0m
-[0;32mI (62992) SIM_FLOW: >> AT+HTTPPARA="URL","tcp://103.75.187.153:1885"
-[0m
-[0;31mE (64052) SIM_FLOW: << ERROR: AT+HTTPPARA="URL","tcp://103.75.187.153:1885"
-ERROR[0m
-[0;32mI (64062) SIM_FLOW: >> AT+HTTPTERM
-[0m
-[0;32mI (64372) SIM_FLOW: << AT+HTTPTERM
-OK[0m
-[0;32mI (64382) SIM_FLOW: >> AT+CMQTTDISC=0,60
-[0m
-[0;32mI (64802) SIM_FLOW: << AT+CMQTTDISC=0,60
-OK[0m
-[0;32mI (64802) SIM_FLOW: >> AT+CMQTTREL=0
-[0m
-[0;32mI (65152) SIM_FLOW: << AT+CMQTTREL=0
-OK[0m
-[0;32mI (65152) SIM_FLOW: >> AT+CMQTTSTOP
-[0m
-[0;32mI (65482) SIM_FLOW: << AT+CMQTTSTOP
-OK[0m
-[0;32mI (65482) SIM_FLOW: >> AT+CMQTTSTART
-[0m
-[0;32mI (66192) SIM_FLOW: << AT+CMQTTSTART
-OK
-
-+CMQTTSTART: 0[0m
-[0;32mI (66202) SIM_FLOW: >> AT+CMQTTACCQ=0,"GREEN_CHARGING"
-[0m
-[0;32mI (66912) SIM_FLOW: << AT+CMQTTACCQ=0,"GREEN_CHARGING"
-OK[0m
-[0;32mI (66922) SIM_FLOW: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-[0m
-[0;32mI (68462) SIM_FLOW: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-OK
-
-+CMQTTCONNECT: 0,0[0m
-[0;32mI (68482) SIM_FLOW: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (68912) SIM_FLOW: << AT+CMQTTSUB=0,12,1
->[0m
-[0;32mI (68972) SIM_FLOW: << 
-OK[0m
-[0;32mI (68972) SIM_FLOW: MQTT CONNECTED[0m
-[0;32mI (68982) SIM_FLOW: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (69402) SIM_FLOW: << AT+CMQTTSUB=0,12,1
->[0m
-[0;32mI (98402) SIM_FLOW: Received data: {postCode:GC59286691881,state:2,paymentDriverCode:GC8PHV3MEQ,maxAmount:14877,sessionCode:1775403288501,pricePost:10000}[0m
-[0;32mI (98422) SIM_FLOW: >> AT+HTTPTERM
-[0m
-[0;31mE (98782) SIM_FLOW: << ERROR: AT+HTTPTERM
-ERROR[0m
-[0;32mI (98782) SIM_FLOW: >> AT+HTTPINIT
-[0m
-[0;32mI (99092) SIM_FLOW: << AT+HTTPINIT
-OK[0m
-[0;32mI (99092) SIM_FLOW: >> AT+HTTPPARA="URL","tcp://103.75.187.153:1885"
-[0m
-[0;31mE (100142) SIM_FLOW: << ERROR: AT+HTTPPARA="URL","tcp://103.75.187.153:1885"
-ERROR[0m
-[0;32mI (100152) SIM_FLOW: >> AT+HTTPTERM
-[0m
-[0;32mI (100452) SIM_FLOW: << AT+HTTPTERM
-OK[0m
-[0;32mI (100462) SIM_FLOW: >> AT+CMQTTDISC=0,60
-[0m
-[0;32mI (100882) SIM_FLOW: << AT+CMQTTDISC=0,60
-OK[0m
-[0;32mI (100882) SIM_FLOW: >> AT+CMQTTREL=0
-[0m
-[0;32mI (101232) SIM_FLOW: << AT+CMQTTREL=0
-OK[0m
-[0;32mI (101232) SIM_FLOW: >> AT+CMQTTSTOP
-[0m
-[0;32mI (101552) SIM_FLOW: << AT+CMQTTSTOP
-OK[0m
-[0;32mI (101552) SIM_FLOW: >> AT+CMQTTSTART
-[0m
-[0;32mI (102252) SIM_FLOW: << AT+CMQTTSTART
-OK
-
-+CMQTTSTART: 0[0m
-[0;32mI (102262) SIM_FLOW: >> AT+CMQTTACCQ=0,"GREEN_CHARGING"
-[0m
-[0;32mI (102972) SIM_FLOW: << AT+CMQTTACCQ=0,"GREEN_CHARGING"
-OK[0m
-[0;32mI (102982) SIM_FLOW: >> AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-[0m
-[0;32mI (104512) SIM_FLOW: << AT+CMQTTCONNECT=0,"tcp://103.75.187.153:1885",60,1
-OK
-
-+CMQTTCONNECT: 0,0[0m
-[0;32mI (104532) SIM_FLOW: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (104952) SIM_FLOW: << AT+CMQTTSUB=0,12,1
->[0m
-[0;32mI (105012) SIM_FLOW: << 
-OK[0m
-[0;32mI (105012) SIM_FLOW: MQTT CONNECTED[0m
-[0;32mI (105012) SIM_FLOW: >> AT+CMQTTSUB=0,12,1
-[0m
-[0;32mI (105432) SIM_FLOW: << AT+CMQTTSUB=0,12,1
->[0m
