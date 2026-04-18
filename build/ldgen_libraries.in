@@ -51,6 +51,7 @@ $<TARGET_FILE:__idf_esp_netif>
 $<TARGET_FILE:__idf_wpa_supplicant>
 $<TARGET_FILE:__idf_esp_coex>
 $<TARGET_FILE:__idf_esp_wifi>
+$<TARGET_FILE:__idf_bt>
 $<TARGET_FILE:__idf_unity>
 $<TARGET_FILE:__idf_cmock>
 $<TARGET_FILE:__idf_console>
@@ -81,10 +82,10 @@ $<TARGET_FILE:__idf_spiffs>
 $<TARGET_FILE:__idf_touch_element>
 $<TARGET_FILE:__idf_usb>
 $<TARGET_FILE:__idf_wifi_provisioning>
-$<TARGET_FILE:__idf_wifi_prov>
+$<TARGET_FILE:__idf_wifi_provision>
 $<TARGET_FILE:__idf_espressif__esp_modem>
 $<TARGET_FILE:__idf_uart_sim>
+$<TARGET_FILE:__idf_monitor_control>
 $<TARGET_FILE:__idf_main>
 $<TARGET_FILE:__idf_data_control>
-$<TARGET_FILE:__idf_monitor>
 $<TARGET_FILE:__idf_state_machine>

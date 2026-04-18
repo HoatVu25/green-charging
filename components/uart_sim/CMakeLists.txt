@@ -8,5 +8,6 @@ idf_component_register(
         esp_http_client
         esp_event
         esp_netif
-        esp_modem  
+        esp_modem
+        json
 )

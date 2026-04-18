@@ -13,9 +13,62 @@
 #include "uart_sim.h"
 #include "driver/gpio.h"
 #include "esp_crt_bundle.h"
-          
-#define SIM_RST_PIN 4
+#include "driver/uart.h"
+#include <cJSON.h>         
+
+#define BUFFER_SIZE 1024
+#define SIM_UART UART_NUM_0
+#define SIM_TX_PIN 43
+#define SIM_RX_PIN 44
 static const char *TAG = "SIM7670_PROJ";
+#define LENGTH_PROGRESS 9
+QueueHandle_t sim_queue = NULL;
+sim_event sim_evt;
+
+sim_fsm Table_FSM[LENGTH_PROGRESS];
+
+void init_sim_fsm(void){
+    Table_FSM[0]=(sim_fsm){NETWORK_STATE , NETWORK_CONNECTED , network_connected , MQTT_STATE};
+    Table_FSM[1]=(sim_fsm){NETWORK_STATE , NETWORK_DISCONNECTED , network_disconnected , NETWORK_STATE};
+    Table_FSM[2]=(sim_fsm){MQTT_STATE , MQTT_CONNECTED , action_mqtt_connect_complete , SIM_READY};
+    Table_FSM[3]=(sim_fsm){MQTT_STATE , MQTT_DISCONNECTED , action_retry_mqtt , MQTT_STATE};
+    Table_FSM[4]=(sim_fsm){MQTT_STATE , MQTT_CONNECT_FAIL , action_mqtt_connect_failed , MQTT_STATE};
+    Table_FSM[7]=(sim_fsm){SIM_READY , MQTT_GOT_DATA , http_post_data , SIM_READY};
+    Table_FSM[8]=(sim_fsm){SIM_READY , HTTP_GOT_RESPONSE , http_response , SIM_READY};
+}
+
+void network_connected(void){
+    ESP_LOGI(TAG,"NETWORK CONNECTED");
+    start_mqtt();
+}
+
+void network_disconnected(void){
+    ESP_LOGI(TAG,"NETWORK DISCONNECTED");
+    esp_restart();
+}
+
+void action_mqtt_connect_complete(void)
+{
+    ESP_LOGI(TAG,"MQTT CONNECTED");
+}
+
+void action_retry_mqtt(void){
+   ESP_LOGI("FSM_ACTION", "RETRY_MQTT → Restarting MQTT client...");
+   start_mqtt();
+}
+
+void action_mqtt_connect_failed(void)
+{
+    ESP_LOGI("FSM_ACTION", "MQTT_CONNECT_FAILED → Logging bug or fallback");
+}
+
+void http_connected(void){
+    ESP_LOGI(TAG,"HTTP CONNECTED");
+}
+
+void http_disconnected(void){
+    ESP_LOGI(TAG,"HTTP DISCONNECTED");
+}
 
 void http_post_data(void) {
     // DATA TEST POST HTTP
@@ -53,25 +106,61 @@ void http_post_data(void) {
     esp_http_client_cleanup(client);
 }
 
+void http_response(void){
+    ESP_LOGI(TAG,"HTTP GOT RESPONSE");
+}
+
+MqttAction handler_action_from_mqtt(const char *data_json)
+{
+    cJSON *root = cJSON_Parse(data_json);
+    if (root == NULL)
+    {
+        ESP_LOGE("JSON", "BUG");
+    }
+    cJSON *action = cJSON_GetObjectItem(root, "state");
+    ESP_LOGI("Value Action", "%d", action->valueint);
+    MqttAction action_handler = action->valueint;
+    cJSON_Delete(root);
+    switch (action_handler)
+    {
+    case 0:
+        return OTA_UPDATE_ACTION;
+    case 1:
+        return RESET_CONFIG_ACTION;
+    case 2:
+        return CHARGING_START_ACTION;
+    case 3:
+        return CHARGING_STOP_ACTION;
+    default:
+        return NO_ACTION;
+    }
+}
+
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     esp_mqtt_event_handle_t event = event_data;
     esp_mqtt_client_handle_t client = event->client;
-
+    MqttAction mqtt_act;
     switch ((esp_mqtt_event_id_t)event_id) {
         case MQTT_EVENT_CONNECTED:
-            ESP_LOGI(TAG, "MQTT CONNECTED!");
-            int msg_id = esp_mqtt_client_subscribe(client, MQTT_SUB_TOPIC, 1);
-            ESP_LOGI(TAG, "Request subscribe topic '%s', msg_id=%d", MQTT_SUB_TOPIC, msg_id);
+            esp_mqtt_client_subscribe(client, MQTT_SUB_TOPIC, 1);
+            sim_evt = MQTT_CONNECTED;
+            xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
             break;
         case MQTT_EVENT_DATA:
             ESP_LOGI(TAG, "PAYLOAD: %.*s", event->data_len, event->data);
-             http_post_data();
+            // mqtt_act = handler_action_from_mqtt(event->data);
+            // xQueueSend(sim_queue,mqtt_act,portMAX_DELAY);
+            // http_post_data();
+            sim_evt = MQTT_GOT_DATA;
+            xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
             break;
         case MQTT_EVENT_DISCONNECTED:
-            ESP_LOGW(TAG, "MQTT DISCONNECTED");
-                break;
-        case MQTT_EVENT_SUBSCRIBED:
-            ESP_LOGI(TAG, "MQTT SUBSCRIBED");
+            sim_evt = MQTT_DISCONNECTED;
+            xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
+            break;
+        case MQTT_EVENT_ERROR:
+            sim_evt = MQTT_CONNECT_FAIL;
+            xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
             break;
         default:
             break;
@@ -93,12 +182,13 @@ static void network_event_handler(void *arg, esp_event_base_t event_base, int32_
             case IP_EVENT_PPP_GOT_IP: {
                 ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
                 ESP_LOGI(TAG, "GET IP = " IPSTR, IP2STR(&event->ip_info.ip));
-                ESP_LOGI(TAG, "START MQTT...");
-                start_mqtt();
+                sim_evt = NETWORK_CONNECTED;
+                xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
                 break;
             }
             case IP_EVENT_PPP_LOST_IP:
-                ESP_LOGE(TAG, "DISCONNECTED");
+                sim_evt = NETWORK_DISCONNECTED;
+                xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
                 break;
             default:
                 break;
@@ -109,26 +199,24 @@ static void network_event_handler(void *arg, esp_event_base_t event_base, int32_
 
 esp_err_t http_event_handler(esp_http_client_event_t *evt) {
     switch (evt->event_id) {
-        case HTTP_EVENT_ERROR:
-            ESP_LOGE(TAG, "HTTP_EVENT_ERROR");
-            break;
-        case HTTP_EVENT_ON_CONNECTED:
-            ESP_LOGI(TAG, "HTTP_EVENT_ON_CONNECTED");
-            break;
-        case HTTP_EVENT_ON_HEADER:
-            ESP_LOGD(TAG, "HTTP_EVENT_ON_HEADER, key=%s, value=%s", evt->header_key, evt->header_value);
-            break;
+        // case HTTP_EVENT_ERROR: 
+        //     ESP_LOGE(TAG, "HTTP_EVENT_ERROR");
+        //     break;
+        // case HTTP_EVENT_ON_CONNECTED:
+        //     sim_evt = HTTP_CONNECTED;
+        //     xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
+        //     break;
         case HTTP_EVENT_ON_DATA:
             if (!esp_http_client_is_chunked_response(evt->client)) {
                 ESP_LOGI(TAG, "Server phản hồi: %.*s", evt->data_len, (char*)evt->data);
             }
+            sim_evt = HTTP_GOT_RESPONSE;
+            xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
             break;
-        case HTTP_EVENT_ON_FINISH:
-            ESP_LOGI(TAG, "HTTP_EVENT_ON_FINISH");
-            break;
-        case HTTP_EVENT_DISCONNECTED:
-            ESP_LOGI(TAG, "HTTP_EVENT_DISCONNECTED");
-            break;
+        // case HTTP_EVENT_DISCONNECTED:
+        //     sim_evt = HTTP_DISCONNECTED;
+        //     xQueueSend(sim_queue,&sim_evt,portMAX_DELAY);
+        //     break;
         default:
             break;
     }
@@ -136,25 +224,46 @@ esp_err_t http_event_handler(esp_http_client_event_t *evt) {
 }
 
 
-void uart_task(void) {
-    /// RESET SIM
-    gpio_reset_pin(SIM_RST_PIN);
-    gpio_set_direction(SIM_RST_PIN, GPIO_MODE_OUTPUT);
-    gpio_set_level(SIM_RST_PIN, 0); 
+void init_sim(void) {
+    /// RESET SIM AT COMMAND
+    uart_config_t uart_config = {
+        .baud_rate = 115200,
+        .data_bits = UART_DATA_8_BITS,
+        .parity = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+        .rx_flow_ctrl_thresh = 122,
+    };
+    uart_param_config(UART_NUM_0,&uart_config);
+    uart_set_pin(UART_NUM_0 , 43 , 44 , UART_PIN_NO_CHANGE , UART_PIN_NO_CHANGE);
+    uart_driver_install(UART_NUM_0 , BUFFER_SIZE*2 , BUFFER_SIZE*2 , 0 , NULL , 0);
+
+    vTaskDelay(pdMS_TO_TICKS(1000));                  
+    uart_write_bytes(UART_NUM_0, "+++",3);           
     vTaskDelay(pdMS_TO_TICKS(1000));
-    gpio_set_level(SIM_RST_PIN, 1);
-    vTaskDelay(pdMS_TO_TICKS(2000));
-    
-    
+    uart_flush(UART_NUM_0);
+    uart_write_bytes(UART_NUM_0, "AT+CRESET\r\n", strlen("AT+CRESET\r\n"));
+    static char res[128];
+    int len = uart_read_bytes(UART_NUM_0,res , sizeof(res)-1 , pdMS_TO_TICKS(2000));
+    if (len > 0 && strstr(res , "OK")){
+        ESP_LOGE(TAG,"RESPONSE RESET: %s",res);
+    }
+    else{
+        ESP_LOGE(TAG,"RESET FAIL");
+        esp_restart();
+    }
+    vTaskDelay(5000/portTICK_PERIOD_MS);
+    uart_driver_delete(UART_NUM_0);
+
     /// CONFIG MODEM SIM
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
     ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, ESP_EVENT_ANY_ID, network_event_handler, NULL));
     esp_modem_dte_config_t dte_config = ESP_MODEM_DTE_DEFAULT_CONFIG();
-    dte_config.uart_config.port_num = UART_NUM_2;
-    dte_config.uart_config.tx_io_num = 17;
-    dte_config.uart_config.rx_io_num = 16;
+    dte_config.uart_config.port_num = UART_NUM_0;
+    dte_config.uart_config.tx_io_num = 43;
+    dte_config.uart_config.rx_io_num = 44;
 
 
     esp_netif_config_t netif_ppp_config = ESP_NETIF_DEFAULT_PPP();
@@ -171,9 +280,36 @@ void uart_task(void) {
         ESP_LOGE(TAG, "ERROR : %s", esp_err_to_name(err));     
         esp_restart();
     }
-    
-    while(1){
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+}
+
+void handler_sim_fsm(state *curr_state,sim_event evt){
+    for(int i=0 ; i < LENGTH_PROGRESS ; i++){
+        if (Table_FSM[i].current_state == *curr_state && Table_FSM[i].event == evt){
+            Table_FSM[i].action();
+            *curr_state = Table_FSM[i].next_state;
+            break;
+        }
     }
 }
 
+void reciver_event_sim_fsm(void){
+    sim_queue = xQueueCreate(10,sizeof(sim_event));
+    if (sim_queue == NULL)
+    {
+        ESP_LOGI("QUEUE", "Failed");
+        return;
+    }
+    init_sim();
+    init_sim_fsm();
+    static state curr_state = NETWORK_STATE;
+    sim_event evt;
+    while (1)
+    {
+        if (xQueueReceive(sim_queue,&evt,portMAX_DELAY) == pdPASS){
+           handler_sim_fsm(&curr_state,evt);
+        }
+        else{
+                ESP_LOGI("QUEUE", " !Complete");
+        }
+    }
+}

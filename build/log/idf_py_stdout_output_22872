@@ -1,0 +1,651 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378afe
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 17 2026 19:40:54[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=35800h (219136) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00045828 vaddr=3fc94800 size=02d18h ( 11544) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00048548 vaddr=40374000 size=07ad0h ( 31440) load[0m
+[0;32mI (152) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=726cch (468684) map[0m
+[0;32mI (237) esp_image: segment 4: paddr=000c26f4 vaddr=4037bad0 size=08c50h ( 35920) load[0m
+[0;32mI (252) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (252) boot: Disabling RNG early entropy source...[0m
+[0;32mI (264) cpu_start: Multicore app[0m
+[0;32mI (273) cpu_start: Pro cpu start user code[0m
+[0;32mI (273) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (274) app_init: Application information:[0m
+[0;32mI (276) app_init: Project name:     green_charge_firmware[0m
+[0;32mI (282) app_init: App version:      731ca0f-dirty[0m
+[0;32mI (288) app_init: Compile time:     Apr 17 2026 19:45:27[0m
+[0;32mI (294) app_init: ELF file SHA256:  be5ed87fe...[0m
+[0;32mI (299) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (304) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (309) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (314) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (319) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (326) heap_init: At 3FC99130 len 000505E0 (321 KiB): RAM[0m
+[0;32mI (332) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (338) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (344) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (352) spi_flash: detected chip: generic[0m
+[0;32mI (355) spi_flash: flash io: dio[0m
+[0;33mW (359) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (373) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (379) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (386) coexist: coex firmware version: 4482466[0m
+[0;32mI (392) coexist: coexist rom version e7ae62f[0m
+[0;32mI (397) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (407) main_task: Returned from app_main()[0m
+[0;31mE (8767) SIM7670_PROJ: RESPONSE RESET: AT+CRESET
+OK
+
++CGEV: EPS PDN ACT 1
+
+*ATREADY: 1
+
++CPIN: READY
+
++CGEV: EPS PDN ACT 1
+[0m
+[0;32mI (13767) uart: queue free spaces: 30[0m
+[0;32mI (13837) esp-netif_lwip-ppp: Connected[0m
+[0;32mI (13857) esp-netif_lwip-ppp: Connected[0m
+[0;32mI (13857) SIM7670_PROJ: GET IP = 214.216.52.22[0m
+[0;32mI (13857) SIM7670_PROJ: START MQTT...[0m
+[0;32mI (13967) SIM7670_PROJ: MQTT CONNECTED![0m
+[0;32mI (13967) SIM7670_PROJ: Request subscribe topic 'GC1765606666', msg_id=7327[0m
+[0;32mI (14047) SIM7670_PROJ: MQTT SUBSCRIBED[0m
+[0;32mI (252) boot: Loaded app from partition at offset 0x10000cted size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (373) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (379) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (387) coexist: coex firmware version: 4482466[0m
+[0;32mI (392) coexist: coexist rom version e7ae62f[0m
+[0;32mI (397) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (407) main_task: Returned from app_main()[0m
+[0;31mE (4607) SIM7670_PROJ: RESPONSE RESET: 
+OK
+[0m
+[0;32mI (9607) uart: queue free spaces: 30[0m
+[0;32mI (9677) esp-netif_lwip-ppp: Connected[0m
+[0;32mI (9707) esp-netif_lwip-ppp: Connected[0m
+[0;32mI (9707) SIM7670_PROJ: GET IP = 6.158.68.29[0m
+[0;32mI (9707) SIM7670_PROJ: START MQTT...[0m
+[0;32mI (9837) SIM7670_PROJ: MQTT CONNECTED![0m
+[0;32mI (9837) SIM7670_PROJ: Request subscribe topic 'GC1765606666', msg_id=8393[0m
+[0;32mI (9897) SIM7670_PROJ: MQTT SUBSCRIBED[0m
+[0;32mI (252) boot: Loaded app from partition at offset 0x10000GPIO pins in sleep state[0m
+[0;32mI (379) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (387) coexist: coex firmware version: 4482466[0m
+[0;32mI (392) coexist: coexist rom version e7ae62f[0m
+[0;32mI (397) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (407) main_task: Returned from app_main()[0m
+[0;31mE (4607) SIM7670_PROJ: RESPONSE RESET: 
+OK
+[0m
+[0;32mI (9607) uart: queue free spaces: 30[0m
+[0;32mI (9677) esp-netif_lwip-ppp: Connected[0m
+[0;32mI (9717) esp-netif_lwip-ppp: Connected[0m
+[0;32mI (9717) SIM7670_PROJ: GET IP = 215.62.21.233[0m
+[0;32mI (9717) SIM7670_PROJ: START MQTT...[0m
+[0;32mI (9837) SIM7670_PROJ: MQTT CONNECTED![0m
+[0;32mI (9837) SIM7670_PROJ: Request subscribe topic 'GC1765606666', msg_id=19492[0m
+[0;32mI (9897) SIM7670_PROJ: MQTT SUBSCRIBED[0m
+[0;31mE (4445037) mqtt_client: No PING_RESP, disconnected[0m
+[0;33mW (4445037) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4470417) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4470417) mqtt_client: MQTT connect failed[0m
+[0;33mW (4470417) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4495577) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4495577) mqtt_client: MQTT connect failed[0m
+[0;33mW (4495577) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4520737) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4520737) mqtt_client: MQTT connect failed[0m
+[0;33mW (4520737) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4545907) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4545907) mqtt_client: MQTT connect failed[0m
+[0;33mW (4545907) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4571087) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4571087) mqtt_client: MQTT connect failed[0m
+[0;33mW (4571087) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4596257) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4596257) mqtt_client: MQTT connect failed[0m
+[0;33mW (4596257) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4621417) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4621417) mqtt_client: MQTT connect failed[0m
+[0;33mW (4621417) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4646627) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4646627) mqtt_client: MQTT connect failed[0m
+[0;33mW (4646627) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4671777) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4671777) mqtt_client: MQTT connect failed[0m
+[0;33mW (4671777) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4696947) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4696947) mqtt_client: MQTT connect failed[0m
+[0;33mW (4696947) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4722087) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4722087) mqtt_client: MQTT connect failed[0m
+[0;33mW (4722087) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4747467) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4747467) mqtt_client: MQTT connect failed[0m
+[0;33mW (4747467) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4772617) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4772617) mqtt_client: MQTT connect failed[0m
+[0;33mW (4772617) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4797777) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4797777) mqtt_client: MQTT connect failed[0m
+[0;33mW (4797777) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4822937) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4822937) mqtt_client: MQTT connect failed[0m
+[0;33mW (4822937) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4848097) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4848097) mqtt_client: MQTT connect failed[0m
+[0;33mW (4848097) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4873247) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4873247) mqtt_client: MQTT connect failed[0m
+[0;33mW (4873247) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4898387) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4898387) mqtt_client: MQTT connect failed[0m
+[0;33mW (4898387) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4923567) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4923567) mqtt_client: MQTT connect failed[0m
+[0;33mW (4923567) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4948717) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4948717) mqtt_client: MQTT connect failed[0m
+[0;33mW (4948717) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4973877) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4973877) mqtt_client: MQTT connect failed[0m
+[0;33mW (4973877) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (4999027) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (4999027) mqtt_client: MQTT connect failed[0m
+[0;33mW (4999027) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5024427) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5024427) mqtt_client: MQTT connect failed[0m
+[0;33mW (5024427) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5049577) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5049577) mqtt_client: MQTT connect failed[0m
+[0;33mW (5049577) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5074717) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5074717) mqtt_client: MQTT connect failed[0m
+[0;33mW (5074717) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5099877) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5099877) mqtt_client: MQTT connect failed[0m
+[0;33mW (5099877) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5125037) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5125037) mqtt_client: MQTT connect failed[0m
+[0;33mW (5125037) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5150197) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5150197) mqtt_client: MQTT connect failed[0m
+[0;33mW (5150197) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5175337) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5175337) mqtt_client: MQTT connect failed[0m
+[0;33mW (5175337) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5200477) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5200477) mqtt_client: MQTT connect failed[0m
+[0;33mW (5200477) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5225657) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5225657) mqtt_client: MQTT connect failed[0m
+[0;33mW (5225657) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5250807) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5250807) mqtt_client: MQTT connect failed[0m
+[0;33mW (5250807) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5275967) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5275967) mqtt_client: MQTT connect failed[0m
+[0;33mW (5275967) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5301357) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5301357) mqtt_client: MQTT connect failed[0m
+[0;33mW (5301357) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5326517) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5326517) mqtt_client: MQTT connect failed[0m
+[0;33mW (5326517) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5351667) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5351667) mqtt_client: MQTT connect failed[0m
+[0;33mW (5351667) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5376837) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5376837) mqtt_client: MQTT connect failed[0m
+[0;33mW (5376837) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5401997) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5401997) mqtt_client: MQTT connect failed[0m
+[0;33mW (5401997) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5427167) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5427167) mqtt_client: MQTT connect failed[0m
+[0;33mW (5427167) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5452327) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5452327) mqtt_client: MQTT connect failed[0m
+[0;33mW (5452327) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5477477) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5477477) mqtt_client: MQTT connect failed[0m
+[0;33mW (5477477) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5502627) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5502627) mqtt_client: MQTT connect failed[0m
+[0;33mW (5502627) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5527777) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5527777) mqtt_client: MQTT connect failed[0m
+[0;33mW (5527777) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5552947) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5552947) mqtt_client: MQTT connect failed[0m
+[0;33mW (5552947) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5578367) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5578367) mqtt_client: MQTT connect failed[0m
+[0;33mW (5578367) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5603517) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5603517) mqtt_client: MQTT connect failed[0m
+[0;33mW (5603517) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5628657) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5628657) mqtt_client: MQTT connect failed[0m
+[0;33mW (5628657) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5653817) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5653817) mqtt_client: MQTT connect failed[0m
+[0;33mW (5653817) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5678967) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5678967) mqtt_client: MQTT connect failed[0m
+[0;33mW (5678967) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5704107) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5704107) mqtt_client: MQTT connect failed[0m
+[0;33mW (5704107) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5729277) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5729277) mqtt_client: MQTT connect failed[0m
+[0;33mW (5729277) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5754427) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5754427) mqtt_client: MQTT connect failed[0m
+[0;33mW (5754427) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5779587) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5779587) mqtt_client: MQTT connect failed[0m
+[0;33mW (5779587) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5804747) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5804747) mqtt_client: MQTT connect failed[0m
+[0;33mW (5804747) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5829907) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5829907) mqtt_client: MQTT connect failed[0m
+[0;33mW (5829907) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5855317) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5855317) mqtt_client: MQTT connect failed[0m
+[0;33mW (5855317) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5880477) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5880477) mqtt_client: MQTT connect failed[0m
+[0;33mW (5880477) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5905647) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5905647) mqtt_client: MQTT connect failed[0m
+[0;33mW (5905647) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5930837) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5930837) mqtt_client: MQTT connect failed[0m
+[0;33mW (5930837) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5956007) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5956007) mqtt_client: MQTT connect failed[0m
+[0;33mW (5956007) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (5981187) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (5981187) mqtt_client: MQTT connect failed[0m
+[0;33mW (5981187) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6006337) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6006337) mqtt_client: MQTT connect failed[0m
+[0;33mW (6006337) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6031487) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6031487) mqtt_client: MQTT connect failed[0m
+[0;33mW (6031487) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6056657) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6056657) mqtt_client: MQTT connect failed[0m
+[0;33mW (6056657) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6081817) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6081817) mqtt_client: MQTT connect failed[0m
+[0;33mW (6081817) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6106987) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6106987) mqtt_client: MQTT connect failed[0m
+[0;33mW (6106987) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6132387) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6132387) mqtt_client: MQTT connect failed[0m
+[0;33mW (6132387) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6157547) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6157547) mqtt_client: MQTT connect failed[0m
+[0;33mW (6157547) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6182717) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6182717) mqtt_client: MQTT connect failed[0m
+[0;33mW (6182717) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6207877) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6207877) mqtt_client: MQTT connect failed[0m
+[0;33mW (6207877) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6233037) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6233037) mqtt_client: MQTT connect failed[0m
+[0;33mW (6233037) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6258187) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6258187) mqtt_client: MQTT connect failed[0m
+[0;33mW (6258187) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6283347) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6283347) mqtt_client: MQTT connect failed[0m
+[0;33mW (6283347) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6308517) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6308517) mqtt_client: MQTT connect failed[0m
+[0;33mW (6308517) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6333687) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6333687) mqtt_client: MQTT connect failed[0m
+[0;33mW (6333687) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6358847) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6358847) mqtt_client: MQTT connect failed[0m
+[0;33mW (6358847) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6384017) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6384017) mqtt_client: MQTT connect failed[0m
+[0;33mW (6384017) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6409417) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6409417) mqtt_client: MQTT connect failed[0m
+[0;33mW (6409417) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6434577) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6434577) mqtt_client: MQTT connect failed[0m
+[0;33mW (6434577) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6459747) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6459747) mqtt_client: MQTT connect failed[0m
+[0;33mW (6459747) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6484907) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6484907) mqtt_client: MQTT connect failed[0m
+[0;33mW (6484907) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6510047) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6510047) mqtt_client: MQTT connect failed[0m
+[0;33mW (6510047) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6535217) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6535217) mqtt_client: MQTT connect failed[0m
+[0;33mW (6535217) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6560397) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6560397) mqtt_client: MQTT connect failed[0m
+[0;33mW (6560397) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6585557) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6585557) mqtt_client: MQTT connect failed[0m
+[0;33mW (6585557) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6610717) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6610717) mqtt_client: MQTT connect failed[0m
+[0;33mW (6610717) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6635877) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6635877) mqtt_client: MQTT connect failed[0m
+[0;33mW (6635877) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6661057) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6661057) mqtt_client: MQTT connect failed[0m
+[0;33mW (6661057) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6686457) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6686457) mqtt_client: MQTT connect failed[0m
+[0;33mW (6686457) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6711617) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6711617) mqtt_client: MQTT connect failed[0m
+[0;33mW (6711617) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6736777) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6736777) mqtt_client: MQTT connect failed[0m
+[0;33mW (6736777) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6761937) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6761937) mqtt_client: MQTT connect failed[0m
+[0;33mW (6761937) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6787087) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6787087) mqtt_client: MQTT connect failed[0m
+[0;33mW (6787087) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6812247) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6812247) mqtt_client: MQTT connect failed[0m
+[0;33mW (6812247) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6837397) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6837397) mqtt_client: MQTT connect failed[0m
+[0;33mW (6837397) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6862557) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6862557) mqtt_client: MQTT connect failed[0m
+[0;33mW (6862557) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6887727) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6887727) mqtt_client: MQTT connect failed[0m
+[0;33mW (6887727) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6912927) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6912927) mqtt_client: MQTT connect failed[0m
+[0;33mW (6912927) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6938067) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6938067) mqtt_client: MQTT connect failed[0m
+[0;33mW (6938067) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6963447) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6963447) mqtt_client: MQTT connect failed[0m
+[0;33mW (6963447) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (6988607) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (6988607) mqtt_client: MQTT connect failed[0m
+[0;33mW (6988607) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7013767) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7013767) mqtt_client: MQTT connect failed[0m
+[0;33mW (7013767) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7038927) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7038927) mqtt_client: MQTT connect failed[0m
+[0;33mW (7038927) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7064077) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7064077) mqtt_client: MQTT connect failed[0m
+[0;33mW (7064077) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7089247) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7089247) mqtt_client: MQTT connect failed[0m
+[0;33mW (7089247) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7114397) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7114397) mqtt_client: MQTT connect failed[0m
+[0;33mW (7114397) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7139547) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7139547) mqtt_client: MQTT connect failed[0m
+[0;33mW (7139547) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7164697) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7164697) mqtt_client: MQTT connect failed[0m
+[0;33mW (7164697) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7189857) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7189857) mqtt_client: MQTT connect failed[0m
+[0;33mW (7189857) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7215027) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7215027) mqtt_client: MQTT connect failed[0m
+[0;33mW (7215027) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7240427) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7240427) mqtt_client: MQTT connect failed[0m
+[0;33mW (7240427) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7265587) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7265587) mqtt_client: MQTT connect failed[0m
+[0;33mW (7265587) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7290727) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7290727) mqtt_client: MQTT connect failed[0m
+[0;33mW (7290727) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7315887) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7315887) mqtt_client: MQTT connect failed[0m
+[0;33mW (7315887) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7341037) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7341037) mqtt_client: MQTT connect failed[0m
+[0;33mW (7341037) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7366197) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7366197) mqtt_client: MQTT connect failed[0m
+[0;33mW (7366197) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7391377) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7391377) mqtt_client: MQTT connect failed[0m
+[0;33mW (7391377) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7416627) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7416627) mqtt_client: MQTT connect failed[0m
+[0;33mW (7416627) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7441787) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7441787) mqtt_client: MQTT connect failed[0m
+[0;33mW (7441787) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7466947) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7466947) mqtt_client: MQTT connect failed[0m
+[0;33mW (7466947) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7492117) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7492117) mqtt_client: MQTT connect failed[0m
+[0;33mW (7492117) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7517497) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7517497) mqtt_client: MQTT connect failed[0m
+[0;33mW (7517497) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7542657) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7542657) mqtt_client: MQTT connect failed[0m
+[0;33mW (7542657) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7567827) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7567827) mqtt_client: MQTT connect failed[0m
+[0;33mW (7567827) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7592987) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7592987) mqtt_client: MQTT connect failed[0m
+[0;33mW (7592987) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7618177) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7618177) mqtt_client: MQTT connect failed[0m
+[0;33mW (7618177) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7643347) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7643347) mqtt_client: MQTT connect failed[0m
+[0;33mW (7643347) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7668527) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7668527) mqtt_client: MQTT connect failed[0m
+[0;33mW (7668527) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7693687) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7693687) mqtt_client: MQTT connect failed[0m
+[0;33mW (7693687) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7718867) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7718867) mqtt_client: MQTT connect failed[0m
+[0;33mW (7718867) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7744037) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7744037) mqtt_client: MQTT connect failed[0m
+[0;33mW (7744037) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7769197) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7769197) mqtt_client: MQTT connect failed[0m
+[0;33mW (7769197) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7794587) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7794587) mqtt_client: MQTT connect failed[0m
+[0;33mW (7794587) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7819737) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7819737) mqtt_client: MQTT connect failed[0m
+[0;33mW (7819737) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7844897) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7844897) mqtt_client: MQTT connect failed[0m
+[0;33mW (7844897) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7870057) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7870057) mqtt_client: MQTT connect failed[0m
+[0;33mW (7870057) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7895217) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7895217) mqtt_client: MQTT connect failed[0m
+[0;33mW (7895217) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7920407) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7920407) mqtt_client: MQTT connect failed[0m
+[0;33mW (7920407) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7945577) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7945577) mqtt_client: MQTT connect failed[0m
+[0;33mW (7945577) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7970737) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7970737) mqtt_client: MQTT connect failed[0m
+[0;33mW (7970737) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (7995967) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (7995967) mqtt_client: MQTT connect failed[0m
+[0;33mW (7995967) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8021137) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8021137) mqtt_client: MQTT connect failed[0m
+[0;33mW (8021137) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8046287) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8046287) mqtt_client: MQTT connect failed[0m
+[0;33mW (8046287) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8071677) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8071677) mqtt_client: MQTT connect failed[0m
+[0;33mW (8071677) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8096847) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8096847) mqtt_client: MQTT connect failed[0m
+[0;33mW (8096847) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8122007) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8122007) mqtt_client: MQTT connect failed[0m
+[0;33mW (8122007) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8147447) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8147447) mqtt_client: MQTT connect failed[0m
+[0;33mW (8147447) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8172607) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8172607) mqtt_client: MQTT connect failed[0m
+[0;33mW (8172607) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8197757) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8197757) mqtt_client: MQTT connect failed[0m
+[0;33mW (8197757) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8222917) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8222917) mqtt_client: MQTT connect failed[0m
+[0;33mW (8222917) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8248077) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8248077) mqtt_client: MQTT connect failed[0m
+[0;33mW (8248077) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8273237) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8273237) mqtt_client: MQTT connect failed[0m
+[0;33mW (8273237) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8298387) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8298387) mqtt_client: MQTT connect failed[0m
+[0;33mW (8298387) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8323547) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8323547) mqtt_client: MQTT connect failed[0m
+[0;33mW (8323547) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8348927) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8348927) mqtt_client: MQTT connect failed[0m
+[0;33mW (8348927) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8374077) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8374077) mqtt_client: MQTT connect failed[0m
+[0;33mW (8374077) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8399237) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8399237) mqtt_client: MQTT connect failed[0m
+[0;33mW (8399237) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8424427) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8424427) mqtt_client: MQTT connect failed[0m
+[0;33mW (8424427) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8449577) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8449577) mqtt_client: MQTT connect failed[0m
+[0;33mW (8449577) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8474737) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8474737) mqtt_client: MQTT connect failed[0m
+[0;33mW (8474737) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8499887) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8499887) mqtt_client: MQTT connect failed[0m
+[0;33mW (8499887) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8525047) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8525047) mqtt_client: MQTT connect failed[0m
+[0;33mW (8525047) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8550337) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8550337) mqtt_client: MQTT connect failed[0m
+[0;33mW (8550337) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8575497) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8575497) mqtt_client: MQTT connect failed[0m
+[0;33mW (8575497) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8600647) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8600647) mqtt_client: MQTT connect failed[0m
+[0;33mW (8600647) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8626027) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8626027) mqtt_client: MQTT connect failed[0m
+[0;33mW (8626027) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8651177) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8651177) mqtt_client: MQTT connect failed[0m
+[0;33mW (8651177) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8676327) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8676327) mqtt_client: MQTT connect failed[0m
+[0;33mW (8676327) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8701477) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8701477) mqtt_client: MQTT connect failed[0m
+[0;33mW (8701477) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8726627) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8726627) mqtt_client: MQTT connect failed[0m
+[0;33mW (8726627) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8751787) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8751787) mqtt_client: MQTT connect failed[0m
+[0;33mW (8751787) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8776947) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8776947) mqtt_client: MQTT connect failed[0m
+[0;33mW (8776947) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8802107) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8802107) mqtt_client: MQTT connect failed[0m
+[0;33mW (8802107) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8827257) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8827257) mqtt_client: MQTT connect failed[0m
+[0;33mW (8827257) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8852407) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8852407) mqtt_client: MQTT connect failed[0m
+[0;33mW (8852407) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8877577) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8877577) mqtt_client: MQTT connect failed[0m
+[0;33mW (8877577) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8902947) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8902947) mqtt_client: MQTT connect failed[0m
+[0;33mW (8902947) SIM7670_PROJ: MQTT DISCONNECTED[0m
+[0;31mE (8928107) mqtt_client: esp_mqtt_connect: mqtt_message_receive() returned 0[0m
+[0;31mE (8928107) mqtt_client: MQTT connect failed[0m
+[0;33mW (8928107) SIM7670_PROJ: MQTT DISCONNECTED[0m
